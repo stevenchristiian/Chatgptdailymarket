@@ -49,6 +49,15 @@
   for(const section of sections){
    const title=section.title;
    if(/dashboard|harga|signal deck|perbandingan|metodologi/i.test(title))continue;
+   if(/minyak|skenario geopolitik/i.test(title)){
+    for(const {node} of section.items){
+     const table=node.matches('table')?node:node.querySelector('table');if(!table)continue;
+     const chart=window.marketOilChart?.(table);
+     if(chart){add('MINYAK · RIWAYAT OBSERVASI','Satu bulan, dalam konteks.',chart.outerHTML+'<p class="story-fine">Jenis seri, keterlambatan data, dan sumber lengkap ada di laporan terpilih.</p>',3);continue;}
+     const rows=[...table.querySelectorAll('tr')],headers=[...rows[0].children].map(text);
+     if(headers[0]==='Skenario')rows.slice(1).forEach(row=>{const cells=[...row.children].map(text);add('SKENARIO · BUKAN KEPASTIAN',escape(cells[0]),headers.slice(1).map((h,i)=>'<p class="story-fine"><strong>'+escape(h)+':</strong> '+escape(cells[i+1]||'Belum tersedia')+'</p>').join(''),3);});
+    }
+   }
    if(/level|teknikal|support.*resistance/i.test(title)){
     for(const {node} of section.items){
      const table=node.matches('table')?node:node.querySelector('table');if(!table)continue;
