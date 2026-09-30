@@ -55,7 +55,17 @@
      const rows=[...table.querySelectorAll('tr')],headers=[...rows[0].children].map(text);
      const si=headers.findIndex(h=>/support/i.test(h)),ri=headers.findIndex(h=>/resistan/i.test(h));
      if(si<0||ri<0)continue;
-     groups(rows.slice(1),2).forEach(batch=>add('LEVEL PANTAUAN','Zona, bukan janji.',batch.map(row=>{const cells=[...row.children].map(text);return '<div class="story-level"><b>'+escape(cells[0])+'</b><dl><div><dt>'+escape(headers[si])+'</dt><dd>'+escape(cells[si])+'</dd></div><div><dt>'+escape(headers[ri])+'</dt><dd>'+escape(cells[ri])+'</dd></div></dl></div>'}).join('')+'<p class="story-fine">Level dari laporan terpilih. Syarat konfirmasi dan skenario lengkap ada di laporan.</p>',3));
+     // Preserve the report's signal and its conditions together; never infer one from price alone.
+     rows.slice(1).forEach(row=>{
+      const cells=[...row.children].map(text);
+      const sig=headers.findIndex(h=>/sinyal|signal/i.test(h));
+      const label=sig>=0&&cells[sig]?cells[sig]:'Belum dinilai';
+      const extras=headers.map((h,i)=>({h,i})).filter(({i})=>i>0&&i!==si&&i!==ri&&i!==sig);
+      add('LEVEL PANTAUAN · '+report.date,escape(cells[0])+' · '+escape(label),
+       '<div class="story-level"><dl><div><dt>'+escape(headers[si])+'</dt><dd>'+escape(cells[si]||'Belum tersedia')+'</dd></div><div><dt>'+escape(headers[ri])+'</dt><dd>'+escape(cells[ri]||'Belum tersedia')+'</dd></div></dl></div>'+
+       extras.map(({h,i})=>'<p class="story-fine"><strong>'+escape(h)+':</strong> '+escape(cells[i]||'Belum tersedia')+'</p>').join('')+
+       '<p class="story-fine">'+(sig<0?'Arsip ini belum memuat penilaian BUY / SELL / HOLD. ':'Sinyal pada waktu snapshot. BUY: setup beli; SELL: kurangi/keluar spot, bukan short; HOLD: tunggu. ')+'Periksa pemicu, invalidasi, dan horizon pada laporan. Bukan harga atau sinyal live.</p>',3);
+     });
     }
     continue;
    }
