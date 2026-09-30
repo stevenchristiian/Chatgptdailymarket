@@ -75,6 +75,12 @@ PAGE = r'''<!doctype html>
 <html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#111815"><meta name="description" content="Recap harian kripto: harga, ETF, geopolitik, agenda ekonomi, dan level teknikal.">
 <title>Market Notes — Daily Crypto Brief</title>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=1">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=1">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="apple-mobile-web-app-title" content="Market Notes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <style>
 :root{--bg:#f5f5ef;--ink:#17251d;--muted:#647065;--line:#dce1d6;--green:#166c43;--red:#aa3838}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 system-ui,-apple-system,sans-serif}header{background:#111815;color:#fff;padding:25px max(5vw,20px);display:flex;align-items:center;justify-content:space-between;gap:20px}header b{letter-spacing:.14em;font-size:14px}header span{color:#a4b6a7;font-size:12px}main{max-width:1200px;margin:auto;padding:48px 24px}a{color:var(--green);text-underline-offset:3px}header a{color:#c4ddaf;font-size:13px}.eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}h1{font-size:clamp(34px,5vw,60px);letter-spacing:-.055em;line-height:1.1;margin:14px 0} .intro{max-width:630px;color:var(--muted)}.controls{display:flex;align-items:end;flex-wrap:wrap;gap:18px;margin:30px 0 14px}label{font-size:12px;font-weight:600;display:grid;gap:6px}select{font:inherit;font-size:14px;color:var(--ink);padding:11px 38px 11px 13px;border:1px solid var(--line);border-radius:8px;background:white}select:focus-visible,a:focus-visible{outline:3px solid #7fac6b;outline-offset:3px}.status{font-size:12px;color:var(--muted);margin-bottom:20px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.card{background:white;border:1px solid var(--line);padding:20px 16px;border-radius:12px}.asset{font-size:12px;font-weight:700;color:var(--muted)}.price{font-size:21px;font-weight:650;letter-spacing:-.04em;margin:8px 0}.change{font-size:13px}.negative{color:var(--red)}.positive{color:var(--green)}.compare{font-size:11px;color:var(--muted);margin-top:9px;border-top:1px solid var(--line);padding-top:9px}.layout{display:grid;grid-template-columns:1fr 235px;gap:32px;margin-top:32px}article{min-width:0;background:white;border:1px solid var(--line);border-radius:14px;padding:30px}article h2{font-size:28px;line-height:1.3;letter-spacing:-.03em}article h3{font-size:22px;line-height:1.4;margin-top:40px}article h4{font-size:17px;margin-top:30px}article p,article li{font-size:14px}article li{margin:8px 0}blockquote{margin:25px 0;background:#edf3e8;border-left:3px solid #6c954b;padding:20px;font-size:16px}.table-wrap{overflow:auto;margin:22px 0}table{border-collapse:collapse;width:100%;font-size:12px}th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top;min-width:80px}th{background:#f3f5ef;font-weight:650}aside{font-size:13px}aside section{border-top:1px solid var(--line);padding:20px 0}aside h2{font-size:14px}aside p{color:var(--muted)}#toc a{display:block;margin:12px 0;text-decoration:none;font-size:12px}hr{border:0;border-top:1px solid var(--line);margin:30px 0}footer{font-size:12px;color:var(--muted);padding:30px 0}noscript{display:block;padding:30px} @media(max-width:1000px){.cards{grid-template-columns:repeat(3,1fr)}.layout{grid-template-columns:1fr}aside{order:-1}#toc{display:none}aside section{display:inline-block;max-width:360px;vertical-align:top;margin-right:25px}article{padding:24px}}@media(max-width:550px){main{padding:30px 16px}.cards{grid-template-columns:repeat(2,1fr)}header span{display:none}.price{font-size:23px}article{padding:18px}header{padding:20px}.controls{gap:12px}select{max-width:170px}aside{display:none}}
 </style></head><body>
@@ -100,3 +106,41 @@ output = ROOT / 'dist'
 output.mkdir(exist_ok=True)
 (output / 'index.html').write_text(PAGE.replace('__DATA__', payload), encoding='utf-8')
 print(f'Built dashboard: {len(reports)} reports -> dist/index.html')
+
+
+
+# Opaque PNG icons, rendered using only the Python standard library.
+# iOS applies its own corner mask; keep the artwork inside the safe area.
+import struct
+import zlib
+
+def icon_png(size):
+    segments = [(0.23, 0.58, 0.40, 0.41), (0.40, 0.41, 0.54, 0.50),
+                (0.54, 0.50, 0.76, 0.27), (0.60, 0.27, 0.76, 0.27),
+                (0.76, 0.27, 0.76, 0.43)]
+    def color(x, y):
+        bg = (17, 24, 21)
+        for left, top, right in [(0.22, 0.69, 0.33), (0.445, 0.61, 0.555), (0.67, 0.53, 0.78)]:
+            if left <= x <= right and top <= y <= 0.79:
+                bg = (58, 87, 61)
+        for x1,y1,x2,y2 in segments:
+            dx,dy=x2-x1,y2-y1
+            t=max(0,min(1,((x-x1)*dx+(y-y1)*dy)/(dx*dx+dy*dy)))
+            if (x-x1-t*dx)**2+(y-y1-t*dy)**2 <= 0.025**2:
+                return (196, 221, 175)
+        return bg
+    pixels=bytearray()
+    for y in range(size):
+        pixels.append(0)
+        for x in range(size):
+            samples=[color((x+dx)/size,(y+dy)/size) for dx,dy in [(0.25,0.25),(0.75,0.25),(0.25,0.75),(0.75,0.75)]]
+            pixels.extend(sum(c[k] for c in samples)//4 for k in range(3))
+    def chunk(kind,data):
+        return struct.pack('>I',len(data))+kind+data+struct.pack('>I',zlib.crc32(kind+data)&0xffffffff)
+    return bytes([137,80,78,71,13,10,26,10])+chunk(b'IHDR',struct.pack('>IIBBBBB',size,size,8,2,0,0,0))+chunk(b'IDAT',zlib.compress(bytes(pixels),9))+chunk(b'IEND',b'')
+
+for filename,size in [('apple-touch-icon.png',180),('icon-192.png',192),('icon-512.png',512)]:
+    (output/filename).write_bytes(icon_png(size))
+manifest={'id':'/','name':'Market Notes','short_name':'Market Notes','lang':'id','start_url':'/','scope':'/','display':'standalone','background_color':'#f5f5ef','theme_color':'#111815','icons':[{'src':f'/icon-{size}.png','sizes':f'{size}x{size}','type':'image/png','purpose':'any'} for size in (192,512)]}
+(output/'manifest.webmanifest').write_text(json.dumps(manifest,ensure_ascii=False),encoding='utf-8')
+print('Built Safari home-screen icon and web app manifest')
