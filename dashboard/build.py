@@ -72,7 +72,7 @@ if not reports:
     raise SystemExit('No recap files found; refusing to publish an empty dashboard.')
 
 PAGE = r'''<!doctype html>
-<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="theme-color" content="#111815"><meta name="description" content="Recap harian kripto: harga, ETF, geopolitik, agenda ekonomi, dan level teknikal.">
 <title>Market Notes — Daily Crypto Brief</title>
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=1">
@@ -83,6 +83,26 @@ PAGE = r'''<!doctype html>
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <style>
 :root{--bg:#f5f5ef;--ink:#17251d;--muted:#647065;--line:#dce1d6;--green:#166c43;--red:#aa3838}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 system-ui,-apple-system,sans-serif}header{background:#111815;color:#fff;padding:25px max(5vw,20px);display:flex;align-items:center;justify-content:space-between;gap:20px}header b{letter-spacing:.14em;font-size:14px}header span{color:#a4b6a7;font-size:12px}main{max-width:1200px;margin:auto;padding:48px 24px}a{color:var(--green);text-underline-offset:3px}header a{color:#c4ddaf;font-size:13px}.eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}h1{font-size:clamp(34px,5vw,60px);letter-spacing:-.055em;line-height:1.1;margin:14px 0} .intro{max-width:630px;color:var(--muted)}.controls{display:flex;align-items:end;flex-wrap:wrap;gap:18px;margin:30px 0 14px}label{font-size:12px;font-weight:600;display:grid;gap:6px}select{font:inherit;font-size:14px;color:var(--ink);padding:11px 38px 11px 13px;border:1px solid var(--line);border-radius:8px;background:white}select:focus-visible,a:focus-visible{outline:3px solid #7fac6b;outline-offset:3px}.status{font-size:12px;color:var(--muted);margin-bottom:20px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.card{background:white;border:1px solid var(--line);padding:20px 16px;border-radius:12px}.asset{font-size:12px;font-weight:700;color:var(--muted)}.price{font-size:21px;font-weight:650;letter-spacing:-.04em;margin:8px 0}.change{font-size:13px}.negative{color:var(--red)}.positive{color:var(--green)}.compare{font-size:11px;color:var(--muted);margin-top:9px;border-top:1px solid var(--line);padding-top:9px}.layout{display:grid;grid-template-columns:1fr 235px;gap:32px;margin-top:32px}article{min-width:0;background:white;border:1px solid var(--line);border-radius:14px;padding:30px}article h2{font-size:28px;line-height:1.3;letter-spacing:-.03em}article h3{font-size:22px;line-height:1.4;margin-top:40px}article h4{font-size:17px;margin-top:30px}article p,article li{font-size:14px}article li{margin:8px 0}blockquote{margin:25px 0;background:#edf3e8;border-left:3px solid #6c954b;padding:20px;font-size:16px}.table-wrap{overflow:auto;margin:22px 0}table{border-collapse:collapse;width:100%;font-size:12px}th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top;min-width:80px}th{background:#f3f5ef;font-weight:650}aside{font-size:13px}aside section{border-top:1px solid var(--line);padding:20px 0}aside h2{font-size:14px}aside p{color:var(--muted)}#toc a{display:block;margin:12px 0;text-decoration:none;font-size:12px}hr{border:0;border-top:1px solid var(--line);margin:30px 0}footer{font-size:12px;color:var(--muted);padding:30px 0}noscript{display:block;padding:30px} @media(max-width:1000px){.cards{grid-template-columns:repeat(3,1fr)}.layout{grid-template-columns:1fr}aside{order:-1}#toc{display:none}aside section{display:inline-block;max-width:360px;vertical-align:top;margin-right:25px}article{padding:24px}}@media(max-width:550px){main{padding:30px 16px}.cards{grid-template-columns:repeat(2,1fr)}header span{display:none}.price{font-size:23px}article{padding:18px}header{padding:20px}.controls{gap:12px}select{max-width:170px}aside{display:none}}
+/* Keep mobile layout within the viewport; wide tables scroll locally. */
+html{width:100%;overflow-x:hidden;overscroll-behavior-x:none;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{width:100%;overflow-x:hidden;overflow-wrap:anywhere}
+@supports(overflow:clip){html,body{overflow-x:clip}}
+header{flex-wrap:wrap}
+main,.controls>* ,.card,.layout>*{min-width:0}
+.cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+.layout{grid-template-columns:minmax(0,1fr) 235px}
+.table-wrap{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+select{font-size:16px;max-width:100%}
+@media(pointer:coarse){html,body{touch-action:pan-x pan-y}}
+@media(max-width:1000px){.layout{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:550px){
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:end}
+  .controls label{min-width:0}
+  .controls select{width:100%;min-width:0;max-width:100%;padding-right:22px}
+  #source{grid-column:1/-1}
+  .price{font-size:clamp(18px,5.6vw,23px)}
+}
 </style></head><body>
 <header><b>MARKET NOTES<span> / DAILY CRYPTO BRIEF</span></b><a href="https://github.com/stevenchristiian/Chatgptdailymarket" target="_blank" rel="noopener">Arsip GitHub ↗</a></header>
 <main><div class="eyebrow">Riset harian · WITA / UTC+8</div><h1>Market, made clearer.</h1><p class="intro">Harga, cerita di balik pergerakan, dan level yang perlu diperhatikan. Satu briefing untuk membaca pasar dengan lebih tenang.</p>
@@ -91,6 +111,16 @@ PAGE = r'''<!doctype html>
 <div class="layout"><article id="report"></article><aside><section><div class="eyebrow">Panduan membaca</div><h2>Snapshot, bukan harga live.</h2><p>Perubahan 24 jam berasal dari sumber laporan. Perbandingan tanggal memakai dua snapshot terpilih, sehingga rentangnya bisa berbeda dari 24 jam.</p></section><section><h2>Daftar isi</h2><nav id="toc" aria-label="Daftar isi"></nav></section><section><h2>Kelola ketidakpastian</h2><p>Level teknikal adalah zona pantauan. Periksa tanggal sumber, status ETF parsial, dan syarat skenario sebelum mengambil keputusan.</p></section></aside></div>
 <footer>Market Notes · Laporan diperbarui melalui arsip GitHub. Data dan analisis mengikuti laporan bertanggal; dashboard tidak memverifikasi ulang isi laporan.</footer></main><noscript>Aktifkan JavaScript untuk memilih laporan atau buka arsip GitHub.</noscript>
 <script id="data" type="application/json">__DATA__</script><script>
+// Safari gesture fallback: lock touch zoom while retaining one-finger scrolling.
+const touchLayout=window.matchMedia('(pointer: coarse)');
+function blockTouchZoom(event){
+  if(touchLayout.matches && event.cancelable) event.preventDefault();
+}
+document.addEventListener('gesturestart',blockTouchZoom,{passive:false});
+document.addEventListener('gesturechange',blockTouchZoom,{passive:false});
+document.addEventListener('touchmove',event=>{
+  if(event.touches.length>1) blockTouchZoom(event);
+},{passive:false});
 const reports=JSON.parse(document.getElementById('data').textContent), date=document.getElementById('date'), comparison=document.getElementById('comparison');
 const formatDate=d=>new Intl.DateTimeFormat('id-ID',{day:'numeric',month:'long',year:'numeric',timeZone:'Asia/Makassar'}).format(new Date(d+'T00:00:00+08:00'));
 for(const r of reports){date.add(new Option(formatDate(r.date),r.date));comparison.add(new Option(formatDate(r.date),r.date));}
