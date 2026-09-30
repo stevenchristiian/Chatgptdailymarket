@@ -79,6 +79,7 @@ PAGE = r'''<!doctype html>
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=1">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="stylesheet" href="/stories.css">
+<script src="/insights.js" defer></script>
 <script src="/stories.js" defer></script>
 <meta name="apple-mobile-web-app-title" content="Market Notes">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -137,7 +138,7 @@ payload = json.dumps(reports, ensure_ascii=False).replace('<', '\\u003c').replac
 output = ROOT / 'dist'
 output.mkdir(exist_ok=True)
 (output / 'index.html').write_text(PAGE.replace('__DATA__', payload), encoding='utf-8')
-for asset in ('stories.css', 'stories.js'):
+for asset in ('stories.css', 'stories.js', 'insights.js'):
     (output / asset).write_text((ROOT / 'dashboard' / asset).read_text(encoding='utf-8'), encoding='utf-8')
 print(f'Built dashboard: {len(reports)} reports -> dist/index.html')
 
