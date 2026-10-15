@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111a17">
+  <meta name="description" content="Market Notes: briefing kripto harian berbahasa Indonesia. Pahami sinyal spot, rotasi aset, ETF, fundamental, dan risiko makro dari laporan bertanggal.">
+  <meta name="apple-mobile-web-app-title" content="Market Notes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Market Notes — Baca pasar. Pahami alasannya.</title>
+  <link rel="icon" type="image/svg+xml" href="/logo.svg?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/styles.css?v=2">
+  <script src="/app.js?v=2" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Lewati navigasi</a>
+<aside class="sidebar" aria-label="Navigasi utama">
+  <a class="brand" href="/" aria-label="Market Notes beranda"><img src="/logo.svg" width="42" height="42" alt=""><span>Market<span class="brand-light">Notes<span class="brand-dot">.</span></span></span></a>
+  <div class="sidebar-label">YOUR DAILY EDGE</div>
+  <nav class="desktop-nav" id="desktop-nav"></nav>
+  <div class="sidebar-bottom">
+    <div class="edition-mark"><span class="tiny-dot"></span> RISET HARIAN · WITA</div>
+    <p>Lebih paham pasar.<br>Lebih terukur melangkah.</p>
+    <button type="button" class="sidebar-guide" data-action="guide">Panduan membaca <span>↗</span></button>
+    <a class="repo-link" href="https://github.com/stevenchristiian/Chatgptdailymarket" target="_blank" rel="noopener noreferrer">Arsip terbuka di GitHub ↗</a>
+  </div>
+</aside>
+<div class="workspace">
+  <header class="topbar">
+    <div class="breadcrumb"><span>RESEARCH DESK</span><span class="crumb-slash">/</span><strong id="view-name">Overview</strong></div>
+    <a class="mobile-brand" href="/" aria-label="Market Notes beranda"><img src="/logo.svg" alt="" width="31" height="31"><strong>Market Notes.</strong></a>
+    <div class="topbar-actions"><button class="search-trigger" type="button" data-action="search" aria-label="Cari dalam laporan">⌕ <span>Cari insight</span><kbd>⌘ K</kbd></button><button class="icon-button" type="button" data-action="theme" aria-label="Ganti tema" title="Ganti tema terang/gelap">◐</button></div>
+  </header>
+  <main id="main" tabindex="-1">
+    <div class="page-heading">
+      <div><div class="eyebrow" id="edition">MARKET INTELLIGENCE / DAILY BRIEF</div><h1 id="page-title">Baca pasar.<br><span>Pahami alasannya.</span></h1><p id="page-subtitle">Sinyal, cerita, dan risiko. Semua dalam satu pandangan.</p></div>
+      <div class="report-picker"><label for="date">EDISI LAPORAN</label><div class="date-control"><button id="older" class="icon-button" type="button" aria-label="Laporan lebih lama">‹</button><select id="date" aria-label="Tanggal laporan"></select><button id="newer" class="icon-button" type="button" aria-label="Laporan lebih baru">›</button></div><div id="snapshot-time" class="snapshot-time"></div></div>
+    </div>
+    <div class="snapshot-bar" id="snapshot-bar"><span class="snapshot-pill"><span class="tiny-dot"></span> SNAPSHOT LAPORAN</span><span id="snapshot-label"></span><button type="button" class="text-button" data-action="quality">Cek kualitas data ↗</button></div>
+    <div id="content" aria-live="polite"></div>
+    <footer class="page-footer"><div><strong>Market Notes.</strong><span>Riset untuk memahami, keputusan tetap terukur.</span></div><p>Data mengikuti tanggal dan sumber laporan. Harga tidak diperbarui saat halaman dibuka. Label analisis bukan eksekusi order.</p><div class="footer-links"><button type="button" data-action="guide">Panduan & istilah</button><a id="source-footer" target="_blank" rel="noopener noreferrer">Laporan asli ↗</a><button type="button" data-action="share">Salin tautan</button></div></footer>
+  </main>
+</div>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Navigasi seluler"></nav>
+<dialog id="detail-dialog" class="detail-dialog" aria-labelledby="detail-title"><div class="dialog-top"><span class="eyebrow">MARKET NOTES / RESEARCH DETAIL</span><button type="button" class="icon-button" data-close aria-label="Tutup detail">×</button></div><div id="detail-content"></div></dialog>
+<dialog id="search-dialog" class="search-dialog" aria-label="Cari dalam laporan"><div class="search-input-row"><span>⌕</span><input id="search-input" type="search" placeholder="Cari aset, ETF, unlock, atau topik…" autocomplete="off" aria-label="Kata kunci pencarian"><button type="button" data-close class="key-button">Esc</button></div><div id="search-results"></div><div class="search-hint">Pencarian pada edisi terpilih · Klik hasil untuk membaca sumber lengkap</div></dialog>
+<dialog id="stories-dialog" class="stories-dialog" aria-label="Stories briefing harian"><div class="stories-shell"><div id="story-progress" class="story-progress"></div><div class="story-top"><span>MARKET NOTES. <span id="story-edition"></span></span><button type="button" class="icon-button" data-close aria-label="Tutup Stories">×</button></div><div id="story-slide" class="story-slide"></div><div class="story-controls"><button type="button" id="story-prev" aria-label="Cerita sebelumnya">←</button><span id="story-counter"></span><button type="button" id="story-next" aria-label="Cerita berikutnya">→</button></div><p class="story-hint">Tap sisi kiri / kanan · Geser · Tanpa timer</p></div></dialog>
+<div id="toast" class="toast" role="status"></div>
+<noscript><div class="no-script">Aktifkan JavaScript untuk membuka dashboard. <a href="https://github.com/stevenchristiian/Chatgptdailymarket/tree/main/crypto-recaps">Baca arsip laporan di GitHub ↗</a></div></noscript>
+<script id="market-data" type="application/json">__REPORT_DATA__</script>
+</body></html>
