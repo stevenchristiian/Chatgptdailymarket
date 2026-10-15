@@ -1,74 +1,62 @@
 {
   "schema": 1,
   "report": {
-    "asOf": "2026-10-15T00:03:52.812Z",
-    "validUntil": "2026-10-15T12:03:52.812Z",
+    "asOf": "2026-10-15T11:56:47.142Z",
+    "validUntil": "2026-10-15T23:56:47.142Z",
     "signal": "NO TRADE",
-    "headline": "NO TRADE: bias bearish pasca-CPI, jangan mengejar short di support.",
-    "reason": "15 Oktober 2026 08.03 WITA: Daily tutup $81.650 di bawah EMA21, 4H di bawah EMA21/50/200 dengan RSI 38,19. Struktur bearish menguat setelah CPI, tetapi harga dekat low $81.414 dan volume 1H/15m hanya 0,35x/0,30x. Belum ada retest/rejection baru yang layak; tidak mengejar short atau menangkap bottom. PPI dan retail sales malam ini menambah risiko.",
+    "headline": "NO TRADE: support pagi gagal, tunggu PPI/retail sales.",
+    "reason": "15 Oktober 2026 19.56 WITA: mark $81.021 setelah support $81.414–$81.560 gagal. Daily masih di bawah EMA21; 4H di bawah semua EMA dengan RSI 39,71. 1H/15m belum reclaim struktur, volume konfirmasi 0,73x/0,48x. Low baru $80.193 sempat tersapu dan dipantulkan, sehingga mengejar short dekat support tidak menarik. PPI dan retail sales pukul 20.30 WITA: hindari entry 20.00–21.00 WITA dan evaluasi ulang sesudahnya.",
     "levels": [
       {
         "kind": "support",
-        "low": 81414,
-        "high": 81560,
-        "note": "Low Daily/4H terbaru dan area low pasca-rilis; belum breakdown terkonfirmasi."
+        "low": 80465,
+        "high": 80471,
+        "note": "Low rebound 1H setelah sapuan low; support terdekat dari candle tertutup."
       },
       {
         "kind": "support",
-        "low": 81000,
-        "high": 81000,
-        "note": "Swing low Daily 13 Oktober."
-      },
-      {
-        "kind": "support",
-        "low": 80275,
+        "low": 80193,
         "high": 80351,
-        "note": "EMA50 Daily sekitar 80.275 dan swing low 80.351; bukan jaminan pantulan."
+        "note": "Low baru 15 Oktober 80.193, EMA50 Daily 80.275, swing low lama 80.351. Low baru belum pecah berkelanjutan."
       },
       {
         "kind": "resistance",
-        "low": 81964,
-        "high": 82081,
-        "note": "High rebound pasca-CPI, EMA200 4H sekitar 82.046 dan EMA50 15m sekitar 82.035."
+        "low": 81284,
+        "high": 81414,
+        "note": "EMA50 15m dan support pagi yang gagal; perlu reclaim, bukan otomatis resistance presisi."
       },
       {
         "kind": "resistance",
-        "low": 82309,
-        "high": 82500,
-        "note": "EMA21 1H dan high candle penurunan setelah CPI."
+        "low": 81544,
+        "high": 81700,
+        "note": "High rebound 1H/4H dan EMA21 1H sekitar 81.596."
       },
       {
         "kind": "resistance",
-        "low": 82741,
+        "low": 81900,
+        "high": 82203,
+        "note": "High awal hari, EMA200 4H 82.029 dan EMA50 1H 82.203."
+      },
+      {
+        "kind": "resistance",
+        "low": 82599,
         "high": 82940,
-        "note": "EMA50 1H, EMA21 4H dan EMA21 Daily."
+        "note": "EMA21 4H dan EMA21 Daily; zona pengubah bias lebih besar."
       },
       {
         "kind": "resistance",
         "low": 82983,
-        "high": 83239,
-        "note": "Support lama telah gagal; EMA50 4H/EMA200 1H sekitar 83.236–83.239."
+        "high": 83080,
+        "note": "Support lama serta EMA200 1H/EMA50 4H; kini overhead supply."
       },
       {
         "kind": "resistance",
         "low": 83864,
         "high": 84315,
-        "note": "High candle rilis dan supply Daily; jauh dari harga saat ini."
-      },
-      {
-        "kind": "resistance",
-        "low": 85599,
-        "high": 86670,
-        "note": "Supply Daily lebih atas; tidak dipakai sebagai TP intraday saat ini."
+        "note": "Supply Daily lebih jauh; bukan TP aktif."
       }
     ],
     "events": [
-      {
-        "at": "2026-10-15T02:55:00Z",
-        "title": "Bowman: supervision & regulation · 15 Okt 10.55 WITA",
-        "impact": "medium",
-        "source": "https://www.federalreserve.gov/newsevents/2026-october.htm"
-      },
       {
         "at": "2026-10-15T12:30:00Z",
         "title": "PPI September · 15 Okt 20.30 WITA",
@@ -119,10 +107,10 @@
       }
     ],
     "invalidations": [
-      "Bias bearish intraday melemah bila 1H reclaim $82.500 dan retest bertahan; perlu pembaruan, bukan otomatis LONG.",
-      "Reclaim 4H $82.940–$83.239 dengan volume merusak tesis kelanjutan turun.",
-      "Breakdown di bawah $81.414 tanpa retest bukan alasan mengejar short; support $81.000/$80.351 bisa memicu pantulan.",
-      "Data stale, slippage tak terukur atau event guard aktif berarti NO TRADE."
+      "Bias bearish intraday melemah jika 1H reclaim $81.700 dan retest bertahan; belum otomatis LONG.",
+      "Reclaim 4H di atas $82.599–$82.940 dengan volume melemahkan tesis kelanjutan turun.",
+      "Breakdown $80.193 yang langsung direclaim adalah risiko bear trap; jangan mengejar tanpa retest.",
+      "Analisis pra-rilis tidak mengizinkan entry pasca-rilis tanpa evaluasi ulang. Data stale atau event guard aktif berarti NO TRADE."
     ],
     "sources": [
       {
