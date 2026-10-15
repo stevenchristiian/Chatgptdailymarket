@@ -66,6 +66,7 @@ class ArchiveTests(unittest.TestCase):
     def test_snapshot_and_source_remain_attached(self):
         r = self.report('2026-10-15')
         self.assertIn('08.44–08.45 WITA', r['snapshot'])
+        self.assertNotIn('Candle konfirmasi', r['snapshot'])
         self.assertIn('/2026-10-15.md', r['source'])
         self.assertEqual(len({s['id'] for s in r['sections']}), len(r['sections']))
         self.assertIn('Brent spot terakhir 6 Oktober', r['intro'])

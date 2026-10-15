@@ -70,7 +70,7 @@ def parse_blocks(md):
         else:
             para = line
             i += 1
-            while i < len(lines) and lines[i].strip() and not re.match(r'^(?:#{1,6} |\||>|[-*] |\d+[.)] |---)', lines[i].strip()):
+            while i < len(lines) and lines[i].strip() and not lines[i-1].endswith('  ') and not re.match(r'^(?:#{1,6} |\||>|[-*] |\d+[.)] |---)', lines[i].strip()):
                 para += ' ' + lines[i].strip()
                 i += 1
             out.append({'type': 'paragraph', 'text': para})
@@ -193,7 +193,7 @@ def extract_report(path):
         lev = next((x for x in levels if x['asset'] == p['asset']), None)
         if lev:
             p['signal'] = lev['signal']
-    snapshot = next((plain(b['text']) for b in intro if b.get('text') and 'WITA' in b['text']), 'Waktu snapshot belum terbaca; lihat laporan asli.')
+    snapshot = next((plain(line) for line in md.splitlines() if 'WITA' in line), 'Waktu snapshot belum terbaca; lihat laporan asli.')
     oil = []
     oil_name = None
     for t in tables:

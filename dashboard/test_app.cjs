@@ -50,6 +50,7 @@ assert.equal(api.getEtf().flows.BTC,175.7);
 assert.equal(api.getEtf().flows.ETH,24.8);
 assert.equal(api.getEtf().partial[0],'14 Oktober');
 assert.equal(api.getFx().rate,'17.898');
+assert.equal(api.getFx().observation,'14 Oktober 2026');
 assert.equal(api.pointsFor('BTC',7).length,8);
 api.setFilter('buy');
 assert.ok(api.marketTable().includes('Tidak ada aset yang cocok'));
