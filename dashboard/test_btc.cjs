@@ -1,0 +1,18 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const src=fs.readFileSync(__dirname+'/btc.js','utf8');
+let calls=0;const window={};
+vm.runInNewContext(src,{window,location:new URL('https://example.test'),document:{querySelector:()=>null,addEventListener(){},getElementById(){return null}},setInterval(){},Intl,Date,Number,fetch(){calls++;}});
+assert.match(window.btcHub.render(),/Masuk ke dashboard gabungan/);
+window.btcHub.mount();assert.equal(calls,0,'public page never requests private endpoint');
+const now=Date.parse('2026-10-15T06:00:00Z'),iso=n=>new Date(n).toISOString();
+const d={persisted:true,report:{asOf:iso(now-1000),validUntil:iso(now+3600000),events:[]},market:{mark:80000,exchangeAt:iso(now)},tracker:{status:'confirmed',checkedAt:iso(now),reportAsOf:iso(now-1000)}};
+const state=window.btcHub.state;
+assert.match(state(d,now),/SYARAT MEKANIS/);
+assert.match(state({...d,persisted:false},now),/SNAPSHOT AWAL/);
+assert.match(state({...d,market:null},now),/FEED BELUM SEGAR/);
+assert.match(state({...d,market:{mark:80000,exchangeAt:iso(now-180001)}},now),/TUNGGU/);
+assert.match(state({...d,report:{...d.report,validUntil:iso(now)}},now),/KEDALUWARSA/);
+assert.match(state({...d,tracker:{...d.tracker,reportAsOf:iso(now-2000)}},now),/TRACKER BELUM SEGAR/);
+assert.match(state({...d,report:{...d.report,events:[{impact:'high',at:iso(now+60000)}]}},now),/JENDELA EVENT/);
+assert.match(state({...d,tracker:{...d.tracker,status:'unconfigured',label:'Perlu aturan terukur'}},now),/PERLU ATURAN/);
+console.log('PASS: public isolation; expired, stale, event, report-mismatch and unconfigured tracker gates.');

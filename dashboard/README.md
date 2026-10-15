@@ -47,3 +47,9 @@ Oil plots accept only the consistent two-column table `Tanggal | Brent (USD/bare
 Crypto charts are **archive snapshot charts**, not OHLC candles or tick histories. Snapshot time, provider and methodology can differ between editions. They must not be used to recompute candle confirmations or claimed rolling drawdowns. Display archived drawdowns only with their original definitions.
 
 ETF headline cards require a recognizable `Sesi AS` table with a status column, an explicit complete session, and a supported USD-million unit. Unrecognized formats remain readable in the full report; they never become a guessed zero or total. Daily research in Markdown remains the source of truth.
+
+## BTC Risk Desk integration
+
+`btc.js` renders the native read-only BTC panel. On the public site it offers a top-level sign-in handoff to the existing private Risk Desk `/hub?view=btc`. The private hub proxies the public recap and allowlisted static assets without forwarding credentials. It reads `/api/hub-btc` on that same private origin; no cross-origin access token, public signal dump, order execution, journal, position, or capital data is embedded here.
+
+The private hub reads the current public deployment, so future recap commits are visible without copying archives or republishing the private Site. Existing analyst and monitoring writers are unchanged. The BTC feed refreshes when opened and every 60 seconds while visible, with a manual refresh control. Report validity, 3-minute feed/tracker freshness, and event windows gate its displayed status. A mechanically confirmed tracker remains separate from an analyst decision and spot labels.

@@ -244,7 +244,7 @@ def build():
     payload = json.dumps({'version': 2, 'reports': reports}, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
     page = (ROOT/'dashboard/index.html').read_text(encoding='utf-8').replace('__REPORT_DATA__', payload)
     (output/'index.html').write_text(page, encoding='utf-8')
-    for name in ('app.js', 'styles.css', 'logo.svg'):
+    for name in ('app.js', 'btc.js', 'styles.css', 'logo.svg'):
         shutil.copyfile(ROOT/'dashboard'/name, output/name)
     # Expose the original UTF-8 report as a portable download as well as GitHub.
     (output/'reports').mkdir(exist_ok=True)
