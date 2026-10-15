@@ -1,7 +1,6 @@
 """Regression checks for archive parsing and financial number integrity."""
 import importlib.util
 from pathlib import Path
-import tempfile
 import unittest
 
 spec = importlib.util.spec_from_file_location('market_build', Path(__file__).with_name('build.py'))

@@ -95,12 +95,13 @@ function statusFrom(text,type='sector'){
 }
 function getAgenda(){const s=section(/Agenda/i);const table=s?.blocks.find(b=>b.type==='table'&&/Waktu|WITA|Jam/i.test(plain(b.headers[0])));return {section:s,table};}
 const monthMap={januari:1,februari:2,maret:3,april:4,mei:5,juni:6,juli:7,agustus:8,september:9,oktober:10,november:11,desember:12};
-function eventTime(text){
+function eventTimes(text){
  const s=plain(text),m=s.match(/(\d{1,2})\s+(Januari|Februari|Maret|April|Mei|Juni|Juli|Agustus|September|Oktober|November|Desember)(?:\s+(20\d{2}))?\s+(\d{1,2})[.:](\d{2})/i);
- if(!m)return null;
- return Date.parse(`${m[3]||selected.date.slice(0,4)}-${String(monthMap[m[2].toLowerCase()]).padStart(2,'0')}-${m[1].padStart(2,'0')}T${m[4].padStart(2,'0')}:${m[5]}:00+08:00`);
+ if(!m)return [];
+ const day=`${m[3]||selected.date.slice(0,4)}-${String(monthMap[m[2].toLowerCase()]).padStart(2,'0')}-${m[1].padStart(2,'0')}`;
+ return [...s.matchAll(/\b(\d{1,2})[.:](\d{2})\b/g)].filter(t=>Number(t[1])<24&&Number(t[2])<60).map(t=>Date.parse(`${day}T${t[1].padStart(2,'0')}:${t[2]}:00+08:00`)).sort((a,b)=>a-b);
 }
-function eventBadge(text){const ts=eventTime(text);if(!ts)return '<span class="pill">JADWAL LAPORAN</span>';const now=Date.now(),today=new Date(now+8*3600000).toISOString().slice(0,10);if(selected.date!==today)return '<span class="pill">AGENDA ARSIP</span>';if(ts<=now)return '<span class="pill">WAKTU TERLEWATI</span>';return '<span class="pill amber">'+(ts-now<3600000?'&lt;1 jam lagi':Math.ceil((ts-now)/3600000)+' jam lagi')+'</span>';}
+function eventBadge(text){const times=eventTimes(text);if(!times.length)return '<span class="pill">JADWAL LAPORAN</span>';const now=Date.now(),today=new Date(now+8*3600000).toISOString().slice(0,10);if(selected.date!==today)return '<span class="pill">AGENDA ARSIP</span>';const future=times.filter(t=>t>now),ts=future[0];if(!ts)return '<span class="pill">WAKTU TERLEWATI</span>';return '<span class="pill amber">'+(ts-now<3600000?'&lt;1 jam lagi':Math.ceil((ts-now)/3600000)+' jam lagi')+(times.length>1?' · berikutnya':'')+'</span>';}
 function agendaCard(limit=4){
  const {section:s,table}=getAgenda();if(!s)return empty('Agenda belum tersedia pada edisi ini.');
  if(!table)return `<div class="prose">${s.html}</div>`;

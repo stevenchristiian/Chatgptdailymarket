@@ -27,7 +27,7 @@ const context = vm.createContext({
   URL,Intl,Date,console,setTimeout(){},Number,String,Array,Object,Math,Set,
 });
 let source = fs.readFileSync(path.join(__dirname,'app.js'),'utf8');
-source=source.replace(/\}\)\(\);\s*$/,`globalThis.testAPI={reports,views,overview,market,rotation,macro,research,library,getEtf,getFx,makeSlides,searchResults,pointsFor,
+source=source.replace(/\}\)\(\);\s*$/,`globalThis.testAPI={reports,views,overview,market,rotation,macro,research,library,getEtf,getFx,makeSlides,searchResults,pointsFor,eventTimes,
  setReport(r){selected=r;compare=reports[reports.indexOf(r)+1]?.date||'';},setFilter(f){filter=f;},marketTable};})();`);
 vm.runInContext(source, context);
 const api=context.testAPI;
@@ -51,6 +51,10 @@ assert.equal(api.getEtf().flows.ETH,24.8);
 assert.equal(api.getEtf().partial[0],'14 Oktober');
 assert.equal(api.getFx().rate,'17.898');
 assert.equal(api.getFx().observation,'14 Oktober 2026');
+const candles=api.eventTimes('15 Oktober 12.00/16.00/20.00');
+assert.equal(candles.length,3);
+assert.equal(candles[1]-candles[0],4*60*60*1000);
+assert.equal(new Date(candles[2]).toISOString(),'2026-10-15T12:00:00.000Z');
 assert.equal(api.pointsFor('BTC',7).length,8);
 api.setFilter('buy');
 assert.ok(api.marketTable().includes('Tidak ada aset yang cocok'));

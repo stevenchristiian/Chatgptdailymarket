@@ -1,6 +1,5 @@
 """Build Market Notes from the dated Markdown archive, without network or packages."""
 from pathlib import Path
-from datetime import datetime, timezone
 import html
 import json
 import re

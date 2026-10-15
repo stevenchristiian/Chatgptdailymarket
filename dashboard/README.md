@@ -2,6 +2,8 @@
 
 An Indonesian research dashboard built from the dated Markdown files in `crypto-recaps/`. No credentials, market API keys, or runtime backend are needed. It never places orders or refreshes archived quotes as live prices.
 
+![Market Notes v2, verified public dashboard on 15 October 2026](preview.jpg)
+
 ## Build and deploy
 
 ```sh
