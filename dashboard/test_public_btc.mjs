@@ -1,0 +1,10 @@
+import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';
+const source=fs.readFileSync(new URL('./btc.js',import.meta.url),'utf8');
+const window={},panel={innerHTML:''};let request,fail=false;
+const now=Date.now(),asOf=new Date(now-10000).toISOString();
+const d={persisted:true,report:{asOf,validUntil:new Date(now+3600000).toISOString(),signal:'NO TRADE',headline:'Analisis publik',reason:'Pasar belum terkonfirmasi',levels:[],events:[],invalidations:[],sources:[],plan:null},market:{mark:80000,exchangeAt:new Date(now).toISOString(),change24h:1,oi:1000000,technicals:[]},tracker:{reportAsOf:asOf,checkedAt:new Date(now).toISOString(),status:'unconfigured',label:'Perlu aturan terukur',detail:'Tunggu'}};
+vm.runInNewContext(source,{window,location:new URL('https://chatgptdailymarket.steven-wijaya.workers.dev/?view=btc'),document:{querySelector:()=>null,addEventListener(){},getElementById:()=>panel},setInterval(){},Intl,Date,Number,AbortSignal,fetch:async(url,options)=>{request={url,options};if(fail)throw Error();return {ok:true,json:async()=>d};}});
+assert.ok(!window.btcHub.render().includes('Masuk ke dashboard'));
+await window.btcHub.mount();assert.equal(request.url,'/api/btc');assert.equal(request.options.credentials,undefined);assert.equal(request.options.headers,undefined);assert.match(panel.innerHTML,/Analisis publik/);assert.match(panel.innerHTML,/PERLU ATURAN TERUKUR/);assert.ok(!panel.innerHTML.includes('undefined'));assert.ok(!panel.innerHTML.includes('NaN'));
+fail=true;await window.btcHub.mount();assert.match(panel.innerHTML,/PEMBARUAN GAGAL · TUNGGU/);
+console.log('PASS: anonymous native panel reads public API without auth and gates failed refresh.');

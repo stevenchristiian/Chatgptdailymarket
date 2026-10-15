@@ -1,0 +1,171 @@
+{
+  "schema": 1,
+  "report": {
+    "asOf": "2026-10-15T00:03:52.812Z",
+    "validUntil": "2026-10-15T12:03:52.812Z",
+    "signal": "NO TRADE",
+    "headline": "NO TRADE: bias bearish pasca-CPI, jangan mengejar short di support.",
+    "reason": "15 Oktober 2026 08.03 WITA: Daily tutup $81.650 di bawah EMA21, 4H di bawah EMA21/50/200 dengan RSI 38,19. Struktur bearish menguat setelah CPI, tetapi harga dekat low $81.414 dan volume 1H/15m hanya 0,35x/0,30x. Belum ada retest/rejection baru yang layak; tidak mengejar short atau menangkap bottom. PPI dan retail sales malam ini menambah risiko.",
+    "levels": [
+      {
+        "kind": "support",
+        "low": 81414,
+        "high": 81560,
+        "note": "Low Daily/4H terbaru dan area low pasca-rilis; belum breakdown terkonfirmasi."
+      },
+      {
+        "kind": "support",
+        "low": 81000,
+        "high": 81000,
+        "note": "Swing low Daily 13 Oktober."
+      },
+      {
+        "kind": "support",
+        "low": 80275,
+        "high": 80351,
+        "note": "EMA50 Daily sekitar 80.275 dan swing low 80.351; bukan jaminan pantulan."
+      },
+      {
+        "kind": "resistance",
+        "low": 81964,
+        "high": 82081,
+        "note": "High rebound pasca-CPI, EMA200 4H sekitar 82.046 dan EMA50 15m sekitar 82.035."
+      },
+      {
+        "kind": "resistance",
+        "low": 82309,
+        "high": 82500,
+        "note": "EMA21 1H dan high candle penurunan setelah CPI."
+      },
+      {
+        "kind": "resistance",
+        "low": 82741,
+        "high": 82940,
+        "note": "EMA50 1H, EMA21 4H dan EMA21 Daily."
+      },
+      {
+        "kind": "resistance",
+        "low": 82983,
+        "high": 83239,
+        "note": "Support lama telah gagal; EMA50 4H/EMA200 1H sekitar 83.236–83.239."
+      },
+      {
+        "kind": "resistance",
+        "low": 83864,
+        "high": 84315,
+        "note": "High candle rilis dan supply Daily; jauh dari harga saat ini."
+      },
+      {
+        "kind": "resistance",
+        "low": 85599,
+        "high": 86670,
+        "note": "Supply Daily lebih atas; tidak dipakai sebagai TP intraday saat ini."
+      }
+    ],
+    "events": [
+      {
+        "at": "2026-10-15T02:55:00Z",
+        "title": "Bowman: supervision & regulation · 15 Okt 10.55 WITA",
+        "impact": "medium",
+        "source": "https://www.federalreserve.gov/newsevents/2026-october.htm"
+      },
+      {
+        "at": "2026-10-15T12:30:00Z",
+        "title": "PPI September · 15 Okt 20.30 WITA",
+        "impact": "high",
+        "source": "https://www.bls.gov/schedule/2026/10_sched.htm"
+      },
+      {
+        "at": "2026-10-15T12:30:00Z",
+        "title": "Retail sales September · 15 Okt 20.30 WITA",
+        "impact": "high",
+        "source": "https://www.census.gov/retail/release_schedule.html"
+      },
+      {
+        "at": "2026-10-16T03:30:00Z",
+        "title": "Diskusi Warsh–Georgieva · 16 Okt 11.30 WITA",
+        "impact": "high",
+        "source": "https://www.federalreserve.gov/newsevents/2026-october.htm"
+      },
+      {
+        "at": "2026-10-16T12:30:00Z",
+        "title": "Import/Export Price Index · 16 Okt 20.30 WITA",
+        "impact": "medium",
+        "source": "https://www.bls.gov/schedule/2026/10_sched.htm"
+      },
+      {
+        "at": "2026-10-16T13:15:00Z",
+        "title": "Industrial Production · 16 Okt 21.15 WITA",
+        "impact": "medium",
+        "source": "https://www.federalreserve.gov/newsevents/2026-october.htm"
+      },
+      {
+        "at": "2026-10-20T12:30:00Z",
+        "title": "Housing starts / building permits · 20 Okt 20.30 WITA",
+        "impact": "medium",
+        "source": "https://www.census.gov/construction/soc/schedule.html"
+      },
+      {
+        "at": "2026-10-20T14:00:00Z",
+        "title": "State Employment · 20 Okt 22.00 WITA",
+        "impact": "low",
+        "source": "https://www.bls.gov/schedule/2026/10_sched.htm"
+      },
+      {
+        "at": "2026-10-21T14:00:00Z",
+        "title": "Usual Weekly Earnings Q3 · 21 Okt 22.00 WITA",
+        "impact": "low",
+        "source": "https://www.bls.gov/schedule/2026/10_sched.htm"
+      }
+    ],
+    "invalidations": [
+      "Bias bearish intraday melemah bila 1H reclaim $82.500 dan retest bertahan; perlu pembaruan, bukan otomatis LONG.",
+      "Reclaim 4H $82.940–$83.239 dengan volume merusak tesis kelanjutan turun.",
+      "Breakdown di bawah $81.414 tanpa retest bukan alasan mengejar short; support $81.000/$80.351 bisa memicu pantulan.",
+      "Data stale, slippage tak terukur atau event guard aktif berarti NO TRADE."
+    ],
+    "sources": [
+      {
+        "title": "Hyperliquid API resmi",
+        "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint"
+      },
+      {
+        "title": "BLS kalender resmi",
+        "url": "https://www.bls.gov/schedule/2026/10_sched.htm"
+      },
+      {
+        "title": "Federal Reserve kalender resmi",
+        "url": "https://www.federalreserve.gov/newsevents/2026-october.htm"
+      },
+      {
+        "title": "Census retail sales",
+        "url": "https://www.census.gov/retail/release_schedule.html"
+      },
+      {
+        "title": "Census housing",
+        "url": "https://www.census.gov/construction/soc/schedule.html"
+      },
+      {
+        "title": "Farside ETF",
+        "url": "https://farside.co.uk/btc/"
+      },
+      {
+        "title": "CMC sentimen",
+        "url": "https://coinmarketcap.com/charts/fear-and-greed-index/"
+      },
+      {
+        "title": "CMC derivatif—timestamp tidak terverifikasi",
+        "url": "https://coinmarketcap.com/charts/derivatives/"
+      },
+      {
+        "title": "BLS CPI September resmi",
+        "url": "https://www.bls.gov/news.release/cpi.nr0.htm"
+      },
+      {
+        "title": "Atlanta Fed Beige Book regional",
+        "url": "https://www.atlantafed.org/what-we-study/regional-economy/beige-book/2026/10/14/beige-book-glp-1s-affecting-demand-for-poultry-alcohol"
+      }
+    ],
+    "plan": null
+  }
+}
