@@ -8,7 +8,7 @@ An Indonesian research dashboard built from the dated Markdown files in `crypto-
 python3 dashboard/build.py
 ```
 
-The output directory remains `dist`, compatible with the existing Cloudflare Workers Git build on `main`. Keep the build root at the repository root. New recap commits are included on the next automatic deployment. Do not commit `dist`.
+The output directory remains `dist`. Root `wrangler.jsonc` explicitly runs the Python build and deploys `dist`, so Wrangler cannot accidentally auto-detect and publish the unrendered template. Keep the build root at the repository root and deploy with `npx wrangler deploy`. New recap commits are included on the next automatic deployment. Do not commit `dist`.
 
 ## Validate
 
