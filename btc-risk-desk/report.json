@@ -1,68 +1,68 @@
 {
   "schema": 1,
   "report": {
-    "asOf": "2026-10-15T23:59:30.503Z",
-    "validUntil": "2026-10-16T11:59:30.503Z",
+    "asOf": "2026-10-16T12:00:38.260Z",
+    "validUntil": "2026-10-17T00:00:38.260Z",
     "signal": "NO TRADE",
-    "headline": "NO TRADE: rebound pasca-PPI, belum breakout resistance.",
-    "reason": "16 Oktober 2026 07.59 WITA: mark $82.221. Sapuan low $79.732 diikuti reclaim $81.700 melemahkan bearish intraday, tetapi Daily tetap di bawah EMA21 dan 4H belum melewati EMA21/50. 1H pulih, sedangkan 15m kembali di bawah EMA21 dengan volume hanya 0,21x. Belum ada entry searah Daily/4H yang terkonfirmasi; jangan mengejar rebound. Diskusi Warsh–Georgieva 11.30 WITA menjadi risiko berikutnya.",
+    "headline": "NO TRADE: momentum pulih, tunggu tembus supply dan rilis AS.",
+    "reason": "16 Oktober 2026 20.00 WITA: mark $82.607 (+2,05%/24 jam). 4H sudah di atas EMA21/200 dan MACD positif, tetapi masih di bawah EMA50; Daily di bawah EMA21. 1H naik dengan volume 1,72x, namun wick $82.898 ditolak dan close $82.610 belum melewati supply $82.812–$82.898. Volume 15m terakhir 0,70x; belum ada breakout-retest valid. Tunggu rilis harga impor/ekspor 20.30 dan produksi industri 21.15 WITA.",
     "levels": [
       {
         "kind": "support",
-        "low": 82018,
-        "high": 82105,
-        "note": "EMA50 15m, EMA200 4H/15m dan EMA50 1H; zona dinamis, bukan jaminan pantulan."
+        "low": 82308,
+        "high": 82397,
+        "note": "EMA21 15m/4H; perlu retest, bukan otomatis floor."
       },
       {
         "kind": "support",
-        "low": 81884,
-        "high": 81914,
-        "note": "EMA21 1H serta low 4H 81.888 dan low 1H 81.914."
+        "low": 82116,
+        "high": 82203,
+        "note": "EMA21/50 1H dan EMA50/200 15m; pangkal dorongan terakhir."
       },
       {
         "kind": "support",
-        "low": 81406,
+        "low": 81810,
+        "high": 82036,
+        "note": "Low 4H terbaru dan EMA200 4H; kehilangan zona melemahkan rebound."
+      },
+      {
+        "kind": "support",
+        "low": 81657,
         "high": 81714,
-        "note": "Area pangkal leg rebound 15m/1H; resistance lama 81.700 sudah direclaim."
+        "note": "Low sesi Asia 81.657 dan pangkal leg rebound sebelumnya."
       },
       {
         "kind": "support",
-        "low": 80178,
+        "low": 80193,
         "high": 80351,
-        "note": "Close 1H setelah sweep, low lama 80.193 dan EMA50 Daily 80.275; telah ditembus intraday lalu direclaim."
+        "note": "Low lama dan EMA50 Daily; support jauh setelah reclaim."
       },
       {
         "kind": "support",
         "low": 79732,
         "high": 80030,
-        "note": "Low pasca-PPI dan wick sebelum reversal; invalidasi struktur rebound lebih besar."
+        "note": "Low pasca-PPI dan wick reversal; invalidasi pantulan besar."
       },
       {
         "kind": "resistance",
-        "low": 82430,
-        "high": 82613,
-        "note": "EMA21 4H 82.436 dan beberapa high rebound 82.565/82.590/82.613."
+        "low": 82812,
+        "high": 82898,
+        "note": "EMA200 1H, EMA50 4H, EMA21 Daily serta wick terbaru 82.898."
       },
       {
         "kind": "resistance",
-        "low": 82898,
-        "high": 82983,
-        "note": "EMA200 1H, EMA21 Daily, EMA50 4H dan support lama."
+        "low": 82983,
+        "high": 83153,
+        "note": "Support lama yang menjadi supply dan swing Daily."
       },
       {
         "kind": "resistance",
         "low": 83864,
         "high": 84315,
-        "note": "Supply Daily jauh; bukan target aktif."
+        "note": "Supply Daily jauh; bukan TP aktif."
       }
     ],
     "events": [
-      {
-        "at": "2026-10-16T03:30:00Z",
-        "title": "Diskusi Warsh–Georgieva · 16 Okt 11.30 WITA",
-        "impact": "high",
-        "source": "https://www.federalreserve.gov/newsevents/2026-october.htm"
-      },
       {
         "at": "2026-10-16T12:30:00Z",
         "title": "Import/Export Price Index · 16 Okt 20.30 WITA",
@@ -95,10 +95,10 @@
       }
     ],
     "invalidations": [
-      "Reclaim 4H di atas 82.613 kemudian 82.898–82.983 dengan volume melemahkan bias korektif bearish; tidak otomatis LONG.",
-      "Kehilangan 81.884–81.914 pada close 1H dan gagal reclaim merusak rebound intraday.",
-      "Break low 79.732 tanpa reclaim merusak struktur pantulan; breakdown dengan reclaim cepat berisiko bear trap.",
-      "Candle Daily/4H baru setelah 08.00 WITA perlu evaluasi ulang; snapshot ini diambil sebelum close. Data stale atau event guard aktif berarti NO TRADE."
+      "Close 4H di atas 82.898 dan retest bertahan dengan volume melemahkan bias korektif Daily; belum otomatis LONG.",
+      "Close 1H di bawah 82.116–82.203 dan gagal reclaim melemahkan momentum; kehilangan 81.810 merusak struktur rebound terbaru.",
+      "Low 79.732 tetap invalidasi pantulan besar; wick/reclaim bukan breakdown terkonfirmasi.",
+      "Analisis pra-rilis: jangan gunakan sebagai konfirmasi entry pascarilis tanpa evaluasi ulang. Data stale berarti NO TRADE."
     ],
     "sources": [
       {
