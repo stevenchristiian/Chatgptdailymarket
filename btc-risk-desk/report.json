@@ -1,74 +1,62 @@
 {
   "schema": 1,
   "report": {
-    "asOf": "2026-10-15T11:56:47.142Z",
-    "validUntil": "2026-10-15T23:56:47.142Z",
+    "asOf": "2026-10-15T23:59:30.503Z",
+    "validUntil": "2026-10-16T11:59:30.503Z",
     "signal": "NO TRADE",
-    "headline": "NO TRADE: support pagi gagal, tunggu PPI/retail sales.",
-    "reason": "15 Oktober 2026 19.56 WITA: mark $81.021 setelah support $81.414–$81.560 gagal. Daily masih di bawah EMA21; 4H di bawah semua EMA dengan RSI 39,71. 1H/15m belum reclaim struktur, volume konfirmasi 0,73x/0,48x. Low baru $80.193 sempat tersapu dan dipantulkan, sehingga mengejar short dekat support tidak menarik. PPI dan retail sales pukul 20.30 WITA: hindari entry 20.00–21.00 WITA dan evaluasi ulang sesudahnya.",
+    "headline": "NO TRADE: rebound pasca-PPI, belum breakout resistance.",
+    "reason": "16 Oktober 2026 07.59 WITA: mark $82.221. Sapuan low $79.732 diikuti reclaim $81.700 melemahkan bearish intraday, tetapi Daily tetap di bawah EMA21 dan 4H belum melewati EMA21/50. 1H pulih, sedangkan 15m kembali di bawah EMA21 dengan volume hanya 0,21x. Belum ada entry searah Daily/4H yang terkonfirmasi; jangan mengejar rebound. Diskusi Warsh–Georgieva 11.30 WITA menjadi risiko berikutnya.",
     "levels": [
       {
         "kind": "support",
-        "low": 80465,
-        "high": 80471,
-        "note": "Low rebound 1H setelah sapuan low; support terdekat dari candle tertutup."
+        "low": 82018,
+        "high": 82105,
+        "note": "EMA50 15m, EMA200 4H/15m dan EMA50 1H; zona dinamis, bukan jaminan pantulan."
       },
       {
         "kind": "support",
-        "low": 80193,
+        "low": 81884,
+        "high": 81914,
+        "note": "EMA21 1H serta low 4H 81.888 dan low 1H 81.914."
+      },
+      {
+        "kind": "support",
+        "low": 81406,
+        "high": 81714,
+        "note": "Area pangkal leg rebound 15m/1H; resistance lama 81.700 sudah direclaim."
+      },
+      {
+        "kind": "support",
+        "low": 80178,
         "high": 80351,
-        "note": "Low baru 15 Oktober 80.193, EMA50 Daily 80.275, swing low lama 80.351. Low baru belum pecah berkelanjutan."
+        "note": "Close 1H setelah sweep, low lama 80.193 dan EMA50 Daily 80.275; telah ditembus intraday lalu direclaim."
+      },
+      {
+        "kind": "support",
+        "low": 79732,
+        "high": 80030,
+        "note": "Low pasca-PPI dan wick sebelum reversal; invalidasi struktur rebound lebih besar."
       },
       {
         "kind": "resistance",
-        "low": 81284,
-        "high": 81414,
-        "note": "EMA50 15m dan support pagi yang gagal; perlu reclaim, bukan otomatis resistance presisi."
+        "low": 82430,
+        "high": 82613,
+        "note": "EMA21 4H 82.436 dan beberapa high rebound 82.565/82.590/82.613."
       },
       {
         "kind": "resistance",
-        "low": 81544,
-        "high": 81700,
-        "note": "High rebound 1H/4H dan EMA21 1H sekitar 81.596."
-      },
-      {
-        "kind": "resistance",
-        "low": 81900,
-        "high": 82203,
-        "note": "High awal hari, EMA200 4H 82.029 dan EMA50 1H 82.203."
-      },
-      {
-        "kind": "resistance",
-        "low": 82599,
-        "high": 82940,
-        "note": "EMA21 4H dan EMA21 Daily; zona pengubah bias lebih besar."
-      },
-      {
-        "kind": "resistance",
-        "low": 82983,
-        "high": 83080,
-        "note": "Support lama serta EMA200 1H/EMA50 4H; kini overhead supply."
+        "low": 82898,
+        "high": 82983,
+        "note": "EMA200 1H, EMA21 Daily, EMA50 4H dan support lama."
       },
       {
         "kind": "resistance",
         "low": 83864,
         "high": 84315,
-        "note": "Supply Daily lebih jauh; bukan TP aktif."
+        "note": "Supply Daily jauh; bukan target aktif."
       }
     ],
     "events": [
-      {
-        "at": "2026-10-15T12:30:00Z",
-        "title": "PPI September · 15 Okt 20.30 WITA",
-        "impact": "high",
-        "source": "https://www.bls.gov/schedule/2026/10_sched.htm"
-      },
-      {
-        "at": "2026-10-15T12:30:00Z",
-        "title": "Retail sales September · 15 Okt 20.30 WITA",
-        "impact": "high",
-        "source": "https://www.census.gov/retail/release_schedule.html"
-      },
       {
         "at": "2026-10-16T03:30:00Z",
         "title": "Diskusi Warsh–Georgieva · 16 Okt 11.30 WITA",
@@ -107,27 +95,31 @@
       }
     ],
     "invalidations": [
-      "Bias bearish intraday melemah jika 1H reclaim $81.700 dan retest bertahan; belum otomatis LONG.",
-      "Reclaim 4H di atas $82.599–$82.940 dengan volume melemahkan tesis kelanjutan turun.",
-      "Breakdown $80.193 yang langsung direclaim adalah risiko bear trap; jangan mengejar tanpa retest.",
-      "Analisis pra-rilis tidak mengizinkan entry pasca-rilis tanpa evaluasi ulang. Data stale atau event guard aktif berarti NO TRADE."
+      "Reclaim 4H di atas 82.613 kemudian 82.898–82.983 dengan volume melemahkan bias korektif bearish; tidak otomatis LONG.",
+      "Kehilangan 81.884–81.914 pada close 1H dan gagal reclaim merusak rebound intraday.",
+      "Break low 79.732 tanpa reclaim merusak struktur pantulan; breakdown dengan reclaim cepat berisiko bear trap.",
+      "Candle Daily/4H baru setelah 08.00 WITA perlu evaluasi ulang; snapshot ini diambil sebelum close. Data stale atau event guard aktif berarti NO TRADE."
     ],
     "sources": [
       {
-        "title": "Hyperliquid API resmi",
+        "title": "Hyperliquid API",
         "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint"
       },
       {
-        "title": "BLS kalender resmi",
-        "url": "https://www.bls.gov/schedule/2026/10_sched.htm"
+        "title": "BLS PPI",
+        "url": "https://www.bls.gov/news.release/ppi.htm"
       },
       {
-        "title": "Federal Reserve kalender resmi",
+        "title": "Census retail",
+        "url": "https://www.census.gov/retail/marts/www/marts_current.pdf"
+      },
+      {
+        "title": "Fed kalender",
         "url": "https://www.federalreserve.gov/newsevents/2026-october.htm"
       },
       {
-        "title": "Census retail sales",
-        "url": "https://www.census.gov/retail/release_schedule.html"
+        "title": "BLS kalender",
+        "url": "https://www.bls.gov/schedule/2026/10_sched.htm"
       },
       {
         "title": "Census housing",
@@ -146,12 +138,8 @@
         "url": "https://coinmarketcap.com/charts/derivatives/"
       },
       {
-        "title": "BLS CPI September resmi",
-        "url": "https://www.bls.gov/news.release/cpi.nr0.htm"
-      },
-      {
-        "title": "Atlanta Fed Beige Book regional",
-        "url": "https://www.atlantafed.org/what-we-study/regional-economy/beige-book/2026/10/14/beige-book-glp-1s-affecting-demand-for-poultry-alcohol"
+        "title": "Treasury kurva par",
+        "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&type=daily_treasury_yield_curve"
       }
     ],
     "plan": null
