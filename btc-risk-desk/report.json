@@ -1,80 +1,74 @@
 {
   "schema": 1,
   "report": {
-    "asOf": "2026-10-16T12:00:38.260Z",
-    "validUntil": "2026-10-17T00:00:38.260Z",
+    "asOf": "2026-10-17T00:03:17.112Z",
+    "validUntil": "2026-10-17T12:03:17.112Z",
     "signal": "NO TRADE",
-    "headline": "NO TRADE: momentum pulih, tunggu tembus supply dan rilis AS.",
-    "reason": "16 Oktober 2026 20.00 WITA: mark $82.607 (+2,05%/24 jam). 4H sudah di atas EMA21/200 dan MACD positif, tetapi masih di bawah EMA50; Daily di bawah EMA21. 1H naik dengan volume 1,72x, namun wick $82.898 ditolak dan close $82.610 belum melewati supply $82.812–$82.898. Volume 15m terakhir 0,70x; belum ada breakout-retest valid. Tunggu rilis harga impor/ekspor 20.30 dan produksi industri 21.15 WITA.",
+    "headline": "NO TRADE: rebound gagal, bearish dengan volume akhir pekan tipis.",
+    "reason": "17 Oktober 2026 08.03 WITA: mark $81.587 (-0,76%/24 jam). Rejection $82.898 diikuti kehilangan support $82.308–$82.397 dan $81.810. Daily tetap di bawah EMA21; 4H kembali di bawah seluruh EMA dengan MACD negatif. Rebound dari low $80.772 tertahan $81.800. Volume candle terakhir 1H 0,11x dan 15m 0,08x: belum ada rejection/retest atau breakdown baru yang layak dieksekusi. Jangan mengejar short dekat support dalam likuiditas akhir pekan.",
     "levels": [
       {
         "kind": "support",
-        "low": 82308,
-        "high": 82397,
-        "note": "EMA21 15m/4H; perlu retest, bukan otomatis floor."
+        "low": 81480,
+        "high": 81525,
+        "note": "Low konsolidasi 4H terakhir dan low 1H; dekat harga, bukan entry otomatis."
       },
       {
         "kind": "support",
-        "low": 82116,
-        "high": 82203,
-        "note": "EMA21/50 1H dan EMA50/200 15m; pangkal dorongan terakhir."
+        "low": 81115,
+        "high": 81307,
+        "note": "Close dasar 1H, low 81.226 dan low awal penurunan 81.307."
       },
       {
         "kind": "support",
-        "low": 81810,
-        "high": 82036,
-        "note": "Low 4H terbaru dan EMA200 4H; kehilangan zona melemahkan rebound."
+        "low": 80772,
+        "high": 80890,
+        "note": "Low sesi 16 Oktober dan low pantulan berikutnya."
       },
       {
         "kind": "support",
-        "low": 81657,
-        "high": 81714,
-        "note": "Low sesi Asia 81.657 dan pangkal leg rebound sebelumnya."
-      },
-      {
-        "kind": "support",
-        "low": 80193,
-        "high": 80351,
-        "note": "Low lama dan EMA50 Daily; support jauh setelah reclaim."
+        "low": 80351,
+        "high": 80399,
+        "note": "Swing Daily dan EMA50 Daily."
       },
       {
         "kind": "support",
         "low": 79732,
         "high": 80030,
-        "note": "Low pasca-PPI dan wick reversal; invalidasi pantulan besar."
+        "note": "Low 15 Oktober dan wick sebelum reversal; support jauh."
       },
       {
         "kind": "resistance",
-        "low": 82812,
+        "low": 81633,
+        "high": 81803,
+        "note": "EMA21/50 15m, EMA21 1H dan high rebound 81.800–81.803."
+      },
+      {
+        "kind": "resistance",
+        "low": 81929,
+        "high": 82020,
+        "note": "EMA50 1H, EMA200 15m/4H."
+      },
+      {
+        "kind": "resistance",
+        "low": 82116,
+        "high": 82397,
+        "note": "Support sebelumnya yang gagal dan EMA21 4H 82.173; perlu reclaim."
+      },
+      {
+        "kind": "resistance",
+        "low": 82675,
         "high": 82898,
-        "note": "EMA200 1H, EMA50 4H, EMA21 Daily serta wick terbaru 82.898."
-      },
-      {
-        "kind": "resistance",
-        "low": 82983,
-        "high": 83153,
-        "note": "Support lama yang menjadi supply dan swing Daily."
+        "note": "EMA200 1H, EMA50 4H, EMA21 Daily serta high rejection 82.898."
       },
       {
         "kind": "resistance",
         "low": 83864,
         "high": 84315,
-        "note": "Supply Daily jauh; bukan TP aktif."
+        "note": "Supply Daily jauh; bukan target aktif."
       }
     ],
     "events": [
-      {
-        "at": "2026-10-16T12:30:00Z",
-        "title": "Import/Export Price Index · 16 Okt 20.30 WITA",
-        "impact": "medium",
-        "source": "https://www.bls.gov/schedule/2026/10_sched.htm"
-      },
-      {
-        "at": "2026-10-16T13:15:00Z",
-        "title": "Industrial Production · 16 Okt 21.15 WITA",
-        "impact": "medium",
-        "source": "https://www.federalreserve.gov/newsevents/2026-october.htm"
-      },
       {
         "at": "2026-10-20T12:30:00Z",
         "title": "Housing starts / building permits · 20 Okt 20.30 WITA",
@@ -95,23 +89,15 @@
       }
     ],
     "invalidations": [
-      "Close 4H di atas 82.898 dan retest bertahan dengan volume melemahkan bias korektif Daily; belum otomatis LONG.",
-      "Close 1H di bawah 82.116–82.203 dan gagal reclaim melemahkan momentum; kehilangan 81.810 merusak struktur rebound terbaru.",
-      "Low 79.732 tetap invalidasi pantulan besar; wick/reclaim bukan breakdown terkonfirmasi.",
-      "Analisis pra-rilis: jangan gunakan sebagai konfirmasi entry pascarilis tanpa evaluasi ulang. Data stale berarti NO TRADE."
+      "Close 1H di atas 81.803 lalu retest bertahan melemahkan bearish jangka pendek; belum otomatis LONG.",
+      "Reclaim 4H di atas 82.173 kemudian 82.675–82.898 dengan volume melemahkan tesis bearish lebih besar.",
+      "Break 80.772 disusul reclaim cepat berisiko bear trap; jangan mengejar short tanpa retest.",
+      "Kehilangan 79.732 merusak pantulan besar. Data stale atau volume konfirmasi tidak cukup berarti NO TRADE."
     ],
     "sources": [
       {
         "title": "Hyperliquid API",
         "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint"
-      },
-      {
-        "title": "BLS PPI",
-        "url": "https://www.bls.gov/news.release/ppi.htm"
-      },
-      {
-        "title": "Census retail",
-        "url": "https://www.census.gov/retail/marts/www/marts_current.pdf"
       },
       {
         "title": "Fed kalender",
@@ -140,6 +126,14 @@
       {
         "title": "Treasury kurva par",
         "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&type=daily_treasury_yield_curve"
+      },
+      {
+        "title": "Fed produksi industri resmi",
+        "url": "https://www.federalreserve.gov/releases/g17/current/"
+      },
+      {
+        "title": "BLS harga impor/ekspor resmi",
+        "url": "https://www.bls.gov/news.release/ximpim.nr0.htm"
       }
     ],
     "plan": null
