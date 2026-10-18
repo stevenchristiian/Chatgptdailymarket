@@ -1,71 +1,71 @@
 {
   "schema": 1,
   "report": {
-    "asOf": "2026-10-17T12:04:03.947Z",
-    "validUntil": "2026-10-18T00:04:03.947Z",
+    "asOf": "2026-10-18T00:04:24.485Z",
+    "validUntil": "2026-10-18T12:04:24.485Z",
     "signal": "NO TRADE",
-    "headline": "NO TRADE: bearish dalam range tipis; ETF Jumat kembali outflow.",
-    "reason": "17 Oktober 2026 20.04 WITA: mark $81.551 (-1,28%/24 jam), hampir datar dibanding pagi. Daily/4H tetap di bawah EMA21; 4H juga di bawah EMA50/200. Range sesi $81.387–$81.737 belum pecah. Volume 15m terakhir naik 1,68x tetapi close $81.543 masih di atas support $81.525; volume 1H hanya 0,22x. Belum ada breakdown/retest terkonfirmasi, sehingga short dekat support maupun long melawan bias belum layak.",
+    "headline": "NO TRADE: support gagal, pantulan dari $80.766 belum terkonfirmasi.",
+    "reason": "18 Oktober 2026 08.04 WITA: mark $81.372 (-0,27%/24 jam). Support 81.480–81.525 dan 81.387 sempat gagal; low 80.766 kemudian direclaim. Daily baru tutup 81.451, tetap di bawah EMA21 82.638; 4H di bawah semua EMA. Close 15m kembali di atas EMA21/50, tetapi volume hanya 0,53x dan 1H 0,54x. Mark kini kembali di bawah close terakhir: pantulan belum menjadi reversal. Jangan mengejar short setelah wick bawah atau long tanpa reclaim/retest dengan volume.",
     "levels": [
       {
         "kind": "support",
-        "low": 81480,
-        "high": 81525,
-        "note": "Low konsolidasi sebelumnya dan low 4H terakhir; sudah sempat ditembus intraday, bukan support bersih."
+        "low": 81303,
+        "high": 81312,
+        "note": "Dasar candle rebound 15m; support minor dan rawan ditembus."
       },
       {
         "kind": "support",
-        "low": 81387,
-        "high": 81452,
-        "note": "Low sesi 17 Oktober dan low 1H awal sesi; batas range bawah."
+        "low": 81103,
+        "high": 81182,
+        "note": "Close dasar 1H setelah penurunan dan higher low rebound."
       },
       {
         "kind": "support",
-        "low": 80772,
+        "low": 80766,
         "high": 80800,
-        "note": "Low 16 Oktober dan low 4H 15 Oktober."
+        "note": "Low Daily 17 Oktober/low 16 Oktober 80.772; wick bukan bukti klaster likuidasi."
       },
       {
         "kind": "support",
         "low": 80351,
-        "high": 80399,
-        "note": "Swing Daily 8 Oktober dan EMA50 Daily; belum berubah karena Daily baru belum tutup."
+        "high": 80440,
+        "note": "Swing Daily dan EMA50 Daily terbaru."
       },
       {
         "kind": "support",
         "low": 79732,
         "high": 80193,
-        "note": "Low 15 Oktober dan low 4H sebelum pantulan; zona lebih jauh."
+        "note": "Zona low 15 Oktober; support jauh."
       },
       {
         "kind": "resistance",
-        "low": 81598,
-        "high": 81657,
-        "note": "EMA21/50 15m, EMA21 1H dan high 1H terakhir."
+        "low": 81425,
+        "high": 81480,
+        "note": "EMA50 15m, close Daily/1H 81.451, EMA21 1H serta support lama yang gagal."
       },
       {
         "kind": "resistance",
-        "low": 81720,
-        "high": 81811,
-        "note": "High sesi 81.737, high rebound 81.800, EMA50 1H/EMA200 15m."
+        "low": 81622,
+        "high": 81662,
+        "note": "High rebound, EMA50 1H dan EMA200 15m."
       },
       {
         "kind": "resistance",
-        "low": 82007,
-        "high": 82029,
-        "note": "EMA200/21 4H; reclaim diperlukan untuk memperbaiki bias."
+        "low": 81737,
+        "high": 81885,
+        "note": "High Daily 17 Oktober, high rebound 81.803 dan EMA21 4H."
       },
       {
         "kind": "resistance",
-        "low": 82550,
+        "low": 81991,
+        "high": 81991,
+        "note": "EMA200 4H."
+      },
+      {
+        "kind": "resistance",
+        "low": 82421,
         "high": 82898,
         "note": "EMA200 1H/EMA50 4H, EMA21 Daily dan rejection high 16 Oktober."
-      },
-      {
-        "kind": "resistance",
-        "low": 84103,
-        "high": 84315,
-        "note": "High Daily 12–14 Oktober; supply jauh, bukan target aktif."
       }
     ],
     "events": [
@@ -89,10 +89,10 @@
       }
     ],
     "invalidations": [
-      "Close 1H di atas 81.811 lalu retest bertahan melemahkan bearish intraday; belum otomatis LONG.",
-      "Reclaim 4H 82.029 lalu 82.550–82.898 dengan volume melemahkan bearish lebih besar.",
-      "Break 81.387 tanpa follow-through atau reclaim cepat adalah risiko bear trap; jangan mengejar short.",
-      "Kehilangan 80.772 lalu 79.732 memperburuk struktur. Data stale atau volume tidak cukup berarti NO TRADE."
+      "Close 1H di atas 81.662 dan retest bertahan melemahkan bearish intraday; belum otomatis LONG.",
+      "Reclaim 4H 81.885–81.991 lalu 82.421–82.638 memperbaiki bias lebih besar.",
+      "Break 80.766 disusul reclaim cepat berisiko bear trap; jangan mengejar wick.",
+      "Kehilangan 79.732 memperburuk struktur. Jika data stale atau volume gagal mengonfirmasi, tetap NO TRADE."
     ],
     "sources": [
       {
