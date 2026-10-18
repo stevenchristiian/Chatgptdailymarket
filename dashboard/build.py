@@ -245,7 +245,7 @@ def build():
     page = (ROOT/'dashboard/index.html').read_text(encoding='utf-8').replace('__REPORT_DATA__', payload)
     (output/'index.html').write_text(page, encoding='utf-8')
     shutil.copyfile(ROOT/'btc-risk-desk'/'report.json', output/'btc-report.json')
-    for name in ('app.js', 'btc.js', 'styles.css', 'logo.svg'):
+    for name in ('app.js', 'btc.js', 'portfolio.js', 'styles.css', 'logo.svg'):
         shutil.copyfile(ROOT/'dashboard'/name, output/name)
     # Expose the original UTF-8 report as a portable download as well as GitHub.
     (output/'reports').mkdir(exist_ok=True)
