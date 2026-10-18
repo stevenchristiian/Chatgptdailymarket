@@ -45,6 +45,15 @@ for(const r of api.reports){
   assert.ok(slides.length>=5,`${r.date} stories are available`);
 }
 api.setReport(api.reports[0]);
+const latestEtf=api.getEtf();
+if(latestEtf.row){
+  assert.ok(latestEtf.date,'newest report ETF session has a date');
+  for(const asset of ['BTC','ETH'])assert.ok(Number.isFinite(latestEtf.flows[asset]),`newest report ETF ${asset} flow is numeric`);
+}
+// Pinned archive: 2026-10-15 carries the complete 13 Oktober ETF session and JISDOR 14 Oktober.
+const pinned=api.reports.find(r=>r.date==='2026-10-15');
+assert.ok(pinned,'2026-10-15 archive exists');
+api.setReport(pinned);
 assert.equal(api.getEtf().date,'13 Oktober');
 assert.equal(api.getEtf().flows.BTC,175.7);
 assert.equal(api.getEtf().flows.ETH,24.8);
