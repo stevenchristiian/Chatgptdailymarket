@@ -31,8 +31,9 @@ The regression checks cover mixed Indonesian/English financial notation, histori
 - Macro: complete/partial ETF flows, oil observations, dated FX, geopolitical scenarios, and WITA agenda.
 - Research: QNT/HYPE/LINK/ONDO, supply warnings, other fundamentals, and the dated Signal Deck comparison.
 - Archive: complete source report, table of contents, UTF-8 Markdown download, and source links.
+- Portfolio: private, PIN-gated. Not part of the public report set and not included in any build output.
 
-Deep links retain `?date=YYYY-MM-DD` and accept `&view=market|rotation|macro|research|library`. The default is the newest report. Older `#section-N` links open the full report. Theme is stored locally; there is no account, personal portfolio storage, analytics, or tracking backend.
+Deep links retain `?date=YYYY-MM-DD` and accept `&view=market|rotation|macro|research|library`. The default is the newest report. Older `#section-N` links open the full report. Theme is stored locally; there is no account, analytics, or tracking backend. The Portfolio view is the one exception to the no-backend rule: it holds no data in the published bundle and fetches a private snapshot at runtime from a PIN-gated Supabase RPC.
 
 ## Data contract
 
@@ -55,3 +56,15 @@ Market Notes serves an anonymous read-only `/api/btc` from `dashboard/worker.mjs
 The existing private Risk Desk stays owner-only. `/api/signal-export` on that private Site exports only the approved market fields. Existing analyst/monitor automations mirror that export using the GitHub connection, with a latest-SHA update and no commit when unchanged. They keep original timestamps and never copy private operational endpoints. Updates on main trigger the existing deployment build. See `btc-risk-desk/PUBLISHING.md`.
 
 The public Worker fetches the public Hyperliquid info API and evaluates the same mechanical tracker as the private Desk, using closed candles only. `market.mjs` and `tracker.mjs` are generated from the original typed market/tracker source; update both if those rules change. The panel requests data on open and every 60 seconds while visible. Report validity, feed/tracker freshness and event windows gate status; a mechanical confirmation never changes an analyst signal or a spot label. Private daily risk limits and positions are not used to grant public entry permission. The private hub continues to work unchanged.
+
+## Portfolio view (private)
+
+`dashboard/portfolio.js` renders the Portfolio view. The published bundle contains no balances,
+holdings, or returns: the panel asks for a PIN and calls the Supabase RPC `portfolio_load(p_pin)`
+at runtime. The backing tables (`portfolio_settings`, `portfolio_snapshots`, `portfolio_holdings`)
+have RLS enabled with no policies and all privileges revoked from `anon`, so the publishable key
+alone reads nothing — verified by a direct REST read returning `permission denied for table`.
+The PIN is kept in `sessionStorage` only and clears when the tab closes.
+
+Rotate the PIN with `portfolio_change_pin(p_pin, p_new_pin)`. Change the default before sharing
+the site. Do not move portfolio numbers into `crypto-recaps/` or any file under `dist/`.
