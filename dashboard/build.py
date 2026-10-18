@@ -211,28 +211,63 @@ def extract_report(path):
 
 
 def icon_png(size):
-    # Keep the established Safari mark; the new site uses the same identity.
-    segments = [(0.23, 0.58, 0.40, 0.41), (0.40, 0.41, 0.54, 0.50), (0.54, 0.50, 0.76, 0.27), (0.60, 0.27, 0.76, 0.27), (0.76, 0.27, 0.76, 0.43)]
+    # Lambang halaman berlipat, sama persis dengan dashboard/logo.svg.
+    # Koordinat dinormalisasi dari viewBox 48 unit agar kedua berkas tidak pernah berbeda.
+    U = 48.0
+    LIME = (201, 243, 109)
+    PINE = (23, 55, 43)
+    def seg(x1, y1, x2, y2):
+        return (x1 / U, y1 / U, x2 / U, y2 / U)
+    strokes = [
+        # Garis luar halaman, sudut kanan atas terpotong.
+        (seg(14, 12, 27, 12), 3.2), (seg(27, 12, 35, 20), 3.2),
+        (seg(35, 20, 35, 37), 3.2), (seg(35, 37, 14, 37), 3.2),
+        (seg(14, 37, 14, 12), 3.2),
+        # Lipatan sudut.
+        (seg(27, 12, 27, 20), 3.2), (seg(27, 20, 35, 20), 3.2),
+        # Garis grafik di dalam halaman.
+        (seg(18, 31, 23, 26), 3.0), (seg(23, 26, 27, 29), 3.0),
+        (seg(27, 29, 32, 23), 3.0),
+    ]
+    r_corner = 14.0 / U
+    def inside_rounded(x, y):
+        # Jepit ke kotak dalam; di luar sudut, jarak ke titik jepit itulah radiusnya.
+        cx = r_corner if x < r_corner else (1 - r_corner if x > 1 - r_corner else x)
+        cy = r_corner if y < r_corner else (1 - r_corner if y > 1 - r_corner else y)
+        return (x - cx) ** 2 + (y - cy) ** 2 <= r_corner ** 2
     def color(x, y):
-        bg = (17, 24, 21)
-        for left, top, right in [(0.22, 0.69, 0.33), (0.445, 0.61, 0.555), (0.67, 0.53, 0.78)]:
-            if left <= x <= right and top <= y <= 0.79:
-                bg = (58, 87, 61)
-        for x1, y1, x2, y2 in segments:
+        if not inside_rounded(x, y):
+            return None
+        for (x1, y1, x2, y2), w in strokes:
             dx, dy = x2 - x1, y2 - y1
-            t = max(0, min(1, ((x - x1) * dx + (y - y1) * dy) / (dx * dx + dy * dy)))
-            if (x-x1-t*dx)**2 + (y-y1-t*dy)**2 <= 0.025**2:
-                return (202, 242, 113)
-        return bg
+            d2 = dx * dx + dy * dy
+            t = 0.0 if d2 == 0 else max(0.0, min(1.0, ((x - x1) * dx + (y - y1) * dy) / d2))
+            if (x - x1 - t * dx) ** 2 + (y - y1 - t * dy) ** 2 <= (w / 2 / U) ** 2:
+                return PINE
+        return LIME
     pixels = bytearray()
     for y in range(size):
         pixels.append(0)
         for x in range(size):
-            samples = [color((x+dx)/size, (y+dy)/size) for dx, dy in [(0.25,0.25),(0.75,0.25),(0.25,0.75),(0.75,0.75)]]
-            pixels.extend(sum(c[k] for c in samples)//4 for k in range(3))
+            acc, hit = [0, 0, 0], 0
+            for dx, dy in ((0.17, 0.17), (0.5, 0.17), (0.83, 0.17),
+                           (0.17, 0.5), (0.5, 0.5), (0.83, 0.5),
+                           (0.17, 0.83), (0.5, 0.83), (0.83, 0.83)):
+                c = color((x + dx) / size, (y + dy) / size)
+                if c is not None:
+                    acc = [acc[k] + c[k] for k in range(3)]
+                    hit += 1
+            if hit == 0:
+                pixels.extend(PINE)          # di luar sudut membulat
+            else:
+                # Campur dengan latar gelap pada piksel tepi agar sudutnya halus.
+                pixels.extend((acc[k] + PINE[k] * (9 - hit)) // 9 for k in range(3))
     def chunk(kind, data):
-        return struct.pack('>I', len(data)) + kind + data + struct.pack('>I', zlib.crc32(kind+data) & 0xffffffff)
-    return bytes([137,80,78,71,13,10,26,10]) + chunk(b'IHDR', struct.pack('>IIBBBBB',size,size,8,2,0,0,0)) + chunk(b'IDAT',zlib.compress(bytes(pixels),9)) + chunk(b'IEND',b'')
+        return struct.pack('>I', len(data)) + kind + data + struct.pack('>I', zlib.crc32(kind + data) & 0xffffffff)
+    return (bytes([137, 80, 78, 71, 13, 10, 26, 10])
+            + chunk(b'IHDR', struct.pack('>IIBBBBB', size, size, 8, 2, 0, 0, 0))
+            + chunk(b'IDAT', zlib.compress(bytes(pixels), 9))
+            + chunk(b'IEND', b''))
 
 
 def build():
