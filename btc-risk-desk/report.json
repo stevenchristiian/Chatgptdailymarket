@@ -1,139 +1,90 @@
 {
   "schema": 1,
   "report": {
-    "asOf": "2026-10-18T00:04:24.485Z",
-    "validUntil": "2026-10-18T12:04:24.485Z",
+    "asOf": "2026-10-19T00:52:38.029Z",
+    "validUntil": "2026-10-19T12:52:38.029Z",
     "signal": "NO TRADE",
-    "headline": "NO TRADE: support gagal, pantulan dari $80.766 belum terkonfirmasi.",
-    "reason": "18 Oktober 2026 08.04 WITA: mark $81.372 (-0,27%/24 jam). Support 81.480–81.525 dan 81.387 sempat gagal; low 80.766 kemudian direclaim. Daily baru tutup 81.451, tetap di bawah EMA21 82.638; 4H di bawah semua EMA. Close 15m kembali di atas EMA21/50, tetapi volume hanya 0,53x dan 1H 0,54x. Mark kini kembali di bawah close terakhir: pantulan belum menjadi reversal. Jangan mengejar short setelah wick bawah atau long tanpa reclaim/retest dengan volume.",
+    "headline": "Pantulan membaik, Daily belum pulih; tunggu retest.",
+    "reason": "Daily close 82.079 masih di bawah EMA21 82.588; 4H pulih di atas EMA21 dengan volume 1,84x tetapi di bawah EMA50 82.265. Candle 15m 08.45 WITA RSI 79,51 dan volume 0,74x. Harga sudah melampaui high kemarin tanpa retest terkonfirmasi; belum ada entry yang memenuhi seluruh timeframe.",
     "levels": [
       {
         "kind": "support",
-        "low": 81303,
-        "high": 81312,
-        "note": "Dasar candle rebound 15m; support minor dan rawan ditembus."
+        "low": 81986,
+        "high": 82030,
+        "note": "Low candle 15m terbaru; support minor"
       },
       {
         "kind": "support",
-        "low": 81103,
-        "high": 81182,
-        "note": "Close dasar 1H setelah penurunan dan higher low rebound."
+        "low": 81669,
+        "high": 81808,
+        "note": "Low 1H dan high 1H sebelumnya"
       },
       {
         "kind": "support",
-        "low": 80766,
-        "high": 80800,
-        "note": "Low Daily 17 Oktober/low 16 Oktober 80.772; wick bukan bukti klaster likuidasi."
-      },
-      {
-        "kind": "support",
-        "low": 80351,
-        "high": 80440,
-        "note": "Swing Daily dan EMA50 Daily terbaru."
-      },
-      {
-        "kind": "support",
-        "low": 79732,
-        "high": 80193,
-        "note": "Zona low 15 Oktober; support jauh."
+        "low": 80644,
+        "high": 80751,
+        "note": "Low 4H/Daily terakhir"
       },
       {
         "kind": "resistance",
-        "low": 81425,
-        "high": 81480,
-        "note": "EMA50 15m, close Daily/1H 81.451, EMA21 1H serta support lama yang gagal."
+        "low": 82588,
+        "high": 82613,
+        "note": "EMA21 Daily dan high 15 Oktober"
       },
       {
         "kind": "resistance",
-        "low": 81622,
-        "high": 81662,
-        "note": "High rebound, EMA50 1H dan EMA200 15m."
-      },
-      {
-        "kind": "resistance",
-        "low": 81737,
-        "high": 81885,
-        "note": "High Daily 17 Oktober, high rebound 81.803 dan EMA21 4H."
-      },
-      {
-        "kind": "resistance",
-        "low": 81991,
-        "high": 81991,
-        "note": "EMA200 4H."
-      },
-      {
-        "kind": "resistance",
-        "low": 82421,
+        "low": 82898,
         "high": 82898,
-        "note": "EMA200 1H/EMA50 4H, EMA21 Daily dan rejection high 16 Oktober."
+        "note": "High Daily 16 Oktober"
       }
     ],
     "events": [
       {
-        "at": "2026-10-20T12:30:00Z",
-        "title": "Housing starts / building permits · 20 Okt 20.30 WITA",
+        "at": "2026-10-19T01:30:00Z",
+        "title": "China harga rumah · 09.30 WITA",
         "impact": "medium",
-        "source": "https://www.census.gov/construction/soc/schedule.html"
+        "source": "https://www.stats.gov.cn/english/PressRelease/ReleaseCalendar/202512/t20251226_1962154.html"
+      },
+      {
+        "at": "2026-10-19T02:00:00Z",
+        "title": "China GDP Q3 dan aktivitas · 10.00 WITA",
+        "impact": "high",
+        "source": "https://www.stats.gov.cn/english/PressRelease/ReleaseCalendar/202512/t20251226_1962154.html"
       },
       {
         "at": "2026-10-20T14:00:00Z",
-        "title": "State Employment · 20 Okt 22.00 WITA",
+        "title": "US State Employment · 22.00 WITA",
         "impact": "low",
         "source": "https://www.bls.gov/schedule/2026/10_sched.htm"
       },
       {
         "at": "2026-10-21T14:00:00Z",
-        "title": "Usual Weekly Earnings Q3 · 21 Okt 22.00 WITA",
+        "title": "US Weekly Earnings Q3 · 22.00 WITA",
         "impact": "low",
         "source": "https://www.bls.gov/schedule/2026/10_sched.htm"
       }
     ],
     "invalidations": [
-      "Close 1H di atas 81.662 dan retest bertahan melemahkan bearish intraday; belum otomatis LONG.",
-      "Reclaim 4H 81.885–81.991 lalu 82.421–82.638 memperbaiki bias lebih besar.",
-      "Break 80.766 disusul reclaim cepat berisiko bear trap; jangan mengejar wick.",
-      "Kehilangan 79.732 memperburuk struktur. Jika data stale atau volume gagal mengonfirmasi, tetap NO TRADE."
+      "Close 1H kembali di bawah 81.986 melemahkan breakout minor.",
+      "Close 4H di atas 82.613 lalu retest bertahan memperbaiki bias; perlu rencana baru sebelum LONG.",
+      "Break 80.644 dan gagal reclaim membuka risiko ke 79.732; bukan SHORT otomatis."
     ],
     "sources": [
       {
-        "title": "Hyperliquid API",
+        "title": "Hyperliquid API resmi",
         "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint"
       },
       {
-        "title": "Fed kalender",
-        "url": "https://www.federalreserve.gov/newsevents/2026-october.htm"
+        "title": "Farside BTC",
+        "url": "https://farside.co.uk/btc/"
+      },
+      {
+        "title": "NBS kalender",
+        "url": "https://www.stats.gov.cn/english/PressRelease/ReleaseCalendar/202512/t20251226_1962154.html"
       },
       {
         "title": "BLS kalender",
         "url": "https://www.bls.gov/schedule/2026/10_sched.htm"
-      },
-      {
-        "title": "Census housing",
-        "url": "https://www.census.gov/construction/soc/schedule.html"
-      },
-      {
-        "title": "Farside ETF",
-        "url": "https://farside.co.uk/btc/"
-      },
-      {
-        "title": "CMC sentimen",
-        "url": "https://coinmarketcap.com/charts/fear-and-greed-index/"
-      },
-      {
-        "title": "CMC derivatif—timestamp tidak terverifikasi",
-        "url": "https://coinmarketcap.com/charts/derivatives/"
-      },
-      {
-        "title": "Treasury kurva par",
-        "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&type=daily_treasury_yield_curve"
-      },
-      {
-        "title": "Fed produksi industri resmi",
-        "url": "https://www.federalreserve.gov/releases/g17/current/"
-      },
-      {
-        "title": "BLS harga impor/ekspor resmi",
-        "url": "https://www.bls.gov/news.release/ximpim.nr0.htm"
       }
     ],
     "plan": null
