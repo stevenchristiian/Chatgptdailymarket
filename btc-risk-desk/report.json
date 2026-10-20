@@ -1,73 +1,67 @@
 {
   "schema": 1,
   "report": {
-    "asOf": "2026-10-19T00:52:38.029Z",
-    "validUntil": "2026-10-19T12:52:38.029Z",
+    "asOf": "2026-10-20T00:51:18.011Z",
+    "validUntil": "2026-10-20T12:51:18.011Z",
     "signal": "NO TRADE",
-    "headline": "Pantulan membaik, Daily belum pulih; tunggu retest.",
-    "reason": "Daily close 82.079 masih di bawah EMA21 82.588; 4H pulih di atas EMA21 dengan volume 1,84x tetapi di bawah EMA50 82.265. Candle 15m 08.45 WITA RSI 79,51 dan volume 0,74x. Harga sudah melampaui high kemarin tanpa retest terkonfirmasi; belum ada entry yang memenuhi seluruh timeframe.",
+    "headline": "Pantulan gagal bertahan; tunggu konfirmasi setelah penurunan pagi.",
+    "reason": "Daily close 81.914 di bawah EMA21 82.526. Close 4H 81.914 kembali di bawah EMA21 81.929 dan EMA50 82.247. Candle 15m 08.30–08.45 WITA menutup 81.669 setelah low 81.417; 1H berjalan belum tutup sehingga breakdown lanjutan belum terkonfirmasi. Tidak ada entry aktif.",
     "levels": [
       {
         "kind": "support",
-        "low": 81986,
-        "high": 82030,
-        "note": "Low candle 15m terbaru; support minor"
-      },
-      {
-        "kind": "support",
-        "low": 81669,
-        "high": 81808,
-        "note": "Low 1H dan high 1H sebelumnya"
+        "low": 81417,
+        "high": 81523,
+        "note": "Low dua candle 15m selesai terbaru; support lokal belum teruji berulang."
       },
       {
         "kind": "support",
         "low": 80644,
-        "high": 80751,
-        "note": "Low 4H/Daily terakhir"
+        "high": 80766,
+        "note": "Low Daily 17–18 Oktober."
       },
       {
         "kind": "resistance",
-        "low": 82588,
-        "high": 82613,
-        "note": "EMA21 Daily dan high 15 Oktober"
+        "low": 81914,
+        "high": 81981,
+        "note": "Close Daily/4H dan EMA200 4H, area reclaim."
       },
       {
         "kind": "resistance",
-        "low": 82898,
-        "high": 82898,
-        "note": "High Daily 16 Oktober"
+        "low": 82247,
+        "high": 82275,
+        "note": "EMA50 4H dan high 4H terakhir."
+      },
+      {
+        "kind": "resistance",
+        "low": 82526,
+        "high": 83138,
+        "note": "EMA21 Daily hingga high Daily 19 Oktober; zona lebar, bukan entry."
       }
     ],
     "events": [
       {
-        "at": "2026-10-19T01:30:00Z",
-        "title": "China harga rumah · 09.30 WITA",
+        "at": "2026-10-20T12:30:00Z",
+        "title": "Housing starts / permits · 20.30 WITA",
         "impact": "medium",
-        "source": "https://www.stats.gov.cn/english/PressRelease/ReleaseCalendar/202512/t20251226_1962154.html"
-      },
-      {
-        "at": "2026-10-19T02:00:00Z",
-        "title": "China GDP Q3 dan aktivitas · 10.00 WITA",
-        "impact": "high",
-        "source": "https://www.stats.gov.cn/english/PressRelease/ReleaseCalendar/202512/t20251226_1962154.html"
+        "source": "https://www.census.gov/construction/soc/schedule.html"
       },
       {
         "at": "2026-10-20T14:00:00Z",
-        "title": "US State Employment · 22.00 WITA",
+        "title": "State Employment · 22.00 WITA",
         "impact": "low",
         "source": "https://www.bls.gov/schedule/2026/10_sched.htm"
       },
       {
         "at": "2026-10-21T14:00:00Z",
-        "title": "US Weekly Earnings Q3 · 22.00 WITA",
+        "title": "Weekly Earnings Q3 · 22.00 WITA",
         "impact": "low",
         "source": "https://www.bls.gov/schedule/2026/10_sched.htm"
       }
     ],
     "invalidations": [
-      "Close 1H kembali di bawah 81.986 melemahkan breakout minor.",
-      "Close 4H di atas 82.613 lalu retest bertahan memperbaiki bias; perlu rencana baru sebelum LONG.",
-      "Break 80.644 dan gagal reclaim membuka risiko ke 79.732; bukan SHORT otomatis."
+      "Close 1H di bawah 81.417 dan gagal reclaim melemahkan support lokal; evaluasi ulang, bukan SHORT otomatis.",
+      "Close 1H kembali di atas 81.981 lalu retest bertahan meredakan tekanan pendek.",
+      "Close 4H di atas 82.275 dan retest bertahan memperbaiki bias; perlu plan baru sebelum LONG."
     ],
     "sources": [
       {
@@ -79,12 +73,12 @@
         "url": "https://farside.co.uk/btc/"
       },
       {
-        "title": "NBS kalender",
-        "url": "https://www.stats.gov.cn/english/PressRelease/ReleaseCalendar/202512/t20251226_1962154.html"
-      },
-      {
         "title": "BLS kalender",
         "url": "https://www.bls.gov/schedule/2026/10_sched.htm"
+      },
+      {
+        "title": "Census kalender",
+        "url": "https://www.census.gov/construction/soc/schedule.html"
       }
     ],
     "plan": null
