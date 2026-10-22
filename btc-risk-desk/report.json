@@ -1,67 +1,61 @@
 {
   "schema": 1,
   "report": {
-    "asOf": "2026-10-21T00:47:05.063Z",
-    "validUntil": "2026-10-21T12:47:05.063Z",
+    "asOf": "2026-10-22T00:23:49.161Z",
+    "validUntil": "2026-10-22T12:23:49.161Z",
     "signal": "NO TRADE",
-    "headline": "Reclaim Daily/4H membaik, tetapi resistance belum ditembus dengan volume kuat.",
-    "reason": "Daily close 82.990 kembali di atas EMA21 82.569 dan EMA50 80.655. Close 4H 82.990 juga di atas EMA21/EMA50/EMA200, tetapi volume 4H hanya 0,63x rata-rata. Harga mark 83.112 masih di bawah high 4H/Daily 83.425 dan belum ada breakout-retest tertutup; tidak ada entry aktif.",
+    "headline": "Breakout Daily/4H sudah terjadi, tetapi pullback belum menghasilkan retest yang bersih.",
+    "reason": "Daily dan 4H menutup di atas zona breakout lama 83.226–83.425, tetapi harga sudah berlari ke 84.850 lalu mundur. Candle 15m terakhir berada di bawah EMA21 84.417 dengan MACD histogram negatif; retest 83.226–83.425 belum terjadi dan volume 4H hanya 0,73x rata-rata. Mengejar harga di tengah pullback tidak memenuhi setup breakout-retest.",
     "levels": [
       {
         "kind": "support",
-        "low": 82908,
-        "high": 82990,
-        "note": "EMA21 15m dan close Daily/4H terbaru."
+        "low": 83914,
+        "high": 84234,
+        "note": "EMA21 1H, low 84.020, dan EMA50 15m."
       },
       {
         "kind": "support",
-        "low": 82436,
-        "high": 82569,
-        "note": "Low 1H terbaru dan EMA21 Daily."
-      },
-      {
-        "kind": "support",
-        "low": 81995,
-        "high": 82245,
-        "note": "Konfluens EMA200/EMA50 4H; kehilangan zona ini membatalkan perbaikan."
-      },
-      {
-        "kind": "resistance",
-        "low": 83167,
+        "low": 83226,
         "high": 83425,
-        "note": "High 1H terbaru sampai high Daily/4H; breakout belum terkonfirmasi."
+        "note": "EMA50 1H dan zona breakout lama; retest utama belum terjadi."
+      },
+      {
+        "kind": "support",
+        "low": 82568,
+        "high": 82834,
+        "note": "Konfluens EMA50/EMA21 4H; kehilangan zona ini membatalkan bias naik."
       },
       {
         "kind": "resistance",
-        "low": 84103,
-        "high": 84133,
-        "note": "High Daily 13–14 Oktober; resistance berikutnya jika 83.425 direbut."
+        "low": 84417,
+        "high": 84455,
+        "note": "EMA21 15m dan close 4H sebelumnya."
+      },
+      {
+        "kind": "resistance",
+        "low": 84788,
+        "high": 84850,
+        "note": "High swing 4H/Daily terbaru; breakout baru perlu close dan retest."
       }
     ],
     "events": [
       {
-        "at": "2026-10-21T14:00:00Z",
-        "title": "Usual Weekly Earnings Q3 · 22.00 WITA",
-        "impact": "low",
-        "source": "https://www.bls.gov/schedule/2026/10_sched.htm"
+        "at": "2026-10-22T12:30:00Z",
+        "title": "Initial dan continuing jobless claims AS · 20.30 WITA",
+        "impact": "medium",
+        "source": "https://www.newyorkfed.org/research/calendars/i-oct26.html"
       },
       {
         "at": "2026-10-27T00:00:00Z",
         "title": "FOMC dimulai · 27–28 Oktober (jam keputusan perlu verifikasi)",
         "impact": "high",
         "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-      },
-      {
-        "at": "2026-10-28T14:00:00Z",
-        "title": "Metropolitan Employment + Business Employment Dynamics · 22.00 WITA",
-        "impact": "low",
-        "source": "https://www.bls.gov/schedule/2026/10_sched.htm"
       }
     ],
     "invalidations": [
-      "Close 4H di atas 83.425 disertai retest bertahan dan volume memadai membatalkan status tunggu; perlu report/plan baru sebelum LONG.",
-      "Close 4H di bawah 81.995 lalu gagal reclaim membatalkan perbaikan struktur; evaluasi bearish baru, bukan SHORT otomatis.",
-      "Kenaikan OI tanpa konfirmasi harga/volume tidak boleh dipakai sendirian untuk mengaktifkan trade."
+      "Close 4H di bawah 83.226–83.425 melemahkan breakout; perlu evaluasi ulang dan bukan SHORT otomatis.",
+      "Close 4H di bawah 82.568 membatalkan perbaikan struktur jangka pendek.",
+      "Breakout 84.850 tanpa retest tidak mengaktifkan trade secara otomatis."
     ],
     "sources": [
       {
@@ -73,16 +67,16 @@
         "url": "https://farside.co.uk/btc/"
       },
       {
-        "title": "BLS kalender",
-        "url": "https://www.bls.gov/schedule/2026/10_sched.htm"
+        "title": "NY Fed kalender ekonomi",
+        "url": "https://www.newyorkfed.org/research/calendars/i-oct26.html"
       },
       {
         "title": "Federal Reserve FOMC",
         "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
       },
       {
-        "title": "Reuters energi 20 Oktober",
-        "url": "https://www.reuters.com/business/energy/oil-eases-markets-assess-potential-waiver-russian-energy-middle-east-supply-2026-10-20/"
+        "title": "Reuters energi 21 Oktober",
+        "url": "https://www.reuters.com/business/energy/oil-prices-steady-after-surging-us-inventories-drop-2026-10-21/"
       }
     ],
     "plan": null
