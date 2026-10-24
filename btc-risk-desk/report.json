@@ -1,77 +1,65 @@
 {
   "schema": 1,
   "report": {
-    "asOf": "2026-10-23T00:56:31.488Z",
-    "validUntil": "2026-10-23T12:56:31.488Z",
+    "asOf": "2026-10-24T00:15:16.031Z",
+    "validUntil": "2026-10-24T12:15:16.031Z",
     "signal": "NO TRADE",
-    "headline": "Breakout gagal; semua timeframe entry belum kembali searah.",
-    "reason": "Close 4H 81.410 berada di bawah EMA21 82.400, EMA50 82.422, dan EMA200 82.085 setelah gagal mempertahankan 84.850. Close 1H juga di bawah seluruh EMA utama. Candle 15m memantul di atas EMA21 dengan volume 2,41x, tetapi masih di bawah EMA50/EMA200; mengejar short setelah penurunan sekitar 3,1% atau long sebelum reclaim sama-sama tidak memenuhi setup intraday.",
+    "headline": "Support bergeser ke 80.500; pantulan belum memulihkan struktur 4H.",
+    "reason": "Close 4H 81.180 masih di bawah EMA21 82.019, EMA50 82.235, dan EMA200 82.054. Low baru 80.500 menggantikan 80.911 sebagai support terdekat. Close 15m 80.924 berada di bawah seluruh EMA utama setelah pantulan gagal melewati 81.214. Belum ada breakdown-retest 80.500 atau reclaim 4H yang memadai untuk rencana entry.",
     "levels": [
       {
         "kind": "support",
-        "low": 80911,
-        "high": 80911,
-        "note": "Low Daily/4H terbaru; trigger evaluasi breakdown, bukan short otomatis."
-      },
-      {
-        "kind": "support",
-        "low": 80644,
-        "high": 80766,
-        "note": "Low harian dua sesi sebelumnya."
+        "low": 80500,
+        "high": 80500,
+        "note": "Low candle Daily/4H/1H terbaru; belum ada close 1H di bawahnya."
       },
       {
         "kind": "support",
         "low": 79732,
         "high": 79732,
-        "note": "Low sampel 21 hari Hyperliquid."
+        "note": "Swing low Daily 15 Oktober; support berikutnya jika breakdown terkonfirmasi."
       },
       {
         "kind": "resistance",
-        "low": 81905,
-        "high": 81905,
-        "note": "EMA21 1H; reclaim awal belum cukup untuk LONG."
+        "low": 81196,
+        "high": 81532,
+        "note": "High pantulan 1H dan EMA21 1H dibulatkan."
       },
       {
         "kind": "resistance",
-        "low": 82085,
-        "high": 82440,
-        "note": "Konfluens EMA200/21/50 4H dan EMA50/200 1H."
+        "low": 82019,
+        "high": 82260,
+        "note": "Gugus EMA 4H dan EMA200 1H; reclaim saja belum cukup tanpa retest."
       },
       {
         "kind": "resistance",
         "low": 84335,
         "high": 84850,
-        "note": "Supply swing yang mematahkan breakout kemarin."
+        "note": "Zona high harian 21–22 Oktober."
       }
     ],
     "events": [
       {
-        "at": "2026-10-23T13:45:00Z",
-        "title": "Flash PMI manufaktur dan jasa AS · 21.45 WITA",
+        "at": "2026-10-28T18:00:00Z",
+        "title": "Keputusan FOMC · 29 Oktober 02.00 WITA",
         "impact": "high",
-        "source": "https://www.marketwatch.com/economy-politics/calendar"
+        "source": "https://www.federalreserve.gov/newsevents/2026-october.htm?view=calendar"
       },
       {
-        "at": "2026-10-23T14:00:00Z",
-        "title": "U. Michigan final consumer sentiment · 22.00 WITA",
+        "at": "2026-10-28T18:30:00Z",
+        "title": "Konferensi pers FOMC · 29 Oktober 02.30 WITA",
         "impact": "high",
-        "source": "https://www.marketwatch.com/economy-politics/calendar"
-      },
-      {
-        "at": "2026-10-27T00:00:00Z",
-        "title": "FOMC dimulai · 27–28 Oktober; jam keputusan belum diverifikasi",
-        "impact": "high",
-        "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        "source": "https://www.federalreserve.gov/newsevents/2026-october.htm?view=calendar"
       }
     ],
     "invalidations": [
-      "Close 4H di atas 82.440 dan retest bertahan membatalkan bias bearish intraday.",
-      "Breakdown 80.911 tanpa retest tidak mengaktifkan SHORT otomatis.",
-      "Close 4H di bawah 79.732 memperburuk struktur dan memerlukan rencana baru, bukan penggunaan level lama."
+      "Close 4H di atas 82.260 dan retest bertahan membatalkan bias bearish intraday.",
+      "Close 1H di bawah 80.500 saja belum mengaktifkan SHORT; wajib retest dan konfirmasi 15m.",
+      "Kehilangan 79.732 memerlukan evaluasi ulang, bukan memakai rencana lama."
     ],
     "sources": [
       {
-        "title": "Hyperliquid API resmi",
+        "title": "Hyperliquid API",
         "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint"
       },
       {
@@ -79,24 +67,20 @@
         "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/trading/funding"
       },
       {
-        "title": "CoinMarketCap derivatives",
-        "url": "https://coinmarketcap.com/charts/derivatives/"
-      },
-      {
         "title": "Farside BTC",
         "url": "https://farside.co.uk/btc/"
       },
       {
-        "title": "MarketWatch kalender",
-        "url": "https://www.marketwatch.com/economy-politics/calendar"
+        "title": "Farside ETH",
+        "url": "https://farside.co.uk/eth/"
       },
       {
-        "title": "Federal Reserve FOMC",
-        "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+        "title": "Federal Reserve kalender Oktober",
+        "url": "https://www.federalreserve.gov/newsevents/2026-october.htm?view=calendar"
       },
       {
-        "title": "Reuters minyak 22 Oktober",
-        "url": "https://www.reuters.com/business/energy/oil-rises-us-orders-diplomats-leave-saudi-arabia-amid-escalating-tensions-2026-10-22/"
+        "title": "Reuters minyak 23 Oktober",
+        "url": "https://www.reuters.com/business/energy/oil-little-changed-supply-concern-lingers-amid-houthi-attacks-saudi-arabia-2026-10-23/"
       }
     ],
     "plan": null
