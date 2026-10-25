@@ -1,61 +1,55 @@
 {
   "schema": 1,
   "report": {
-    "asOf": "2026-10-24T00:15:16.031Z",
-    "validUntil": "2026-10-24T12:15:16.031Z",
+    "asOf": "2026-10-25T00:16:21.782Z",
+    "validUntil": "2026-10-25T12:16:21.782Z",
     "signal": "NO TRADE",
-    "headline": "Support bergeser ke 80.500; pantulan belum memulihkan struktur 4H.",
-    "reason": "Close 4H 81.180 masih di bawah EMA21 82.019, EMA50 82.235, dan EMA200 82.054. Low baru 80.500 menggantikan 80.911 sebagai support terdekat. Close 15m 80.924 berada di bawah seluruh EMA utama setelah pantulan gagal melewati 81.214. Belum ada breakdown-retest 80.500 atau reclaim 4H yang memadai untuk rencana entry.",
+    "headline": "Rebound setelah low baru; bias 4H belum pulih.",
+    "reason": "Daily dan 4H masih di bawah EMA21. 1H membaik tetapi 15m volume ratio 0.65 belum mendukung konfirmasi. Tunggu reclaim 81,378 atau breakdown 80,259 disertai retest.",
     "levels": [
       {
         "kind": "support",
-        "low": 80500,
-        "high": 80500,
-        "note": "Low candle Daily/4H/1H terbaru; belum ada close 1H di bawahnya."
+        "low": 80259,
+        "high": 80259,
+        "note": "Low 4H terakhir"
       },
       {
         "kind": "support",
-        "low": 79732,
-        "high": 79732,
-        "note": "Swing low Daily 15 Oktober; support berikutnya jika breakdown terkonfirmasi."
+        "low": 79184,
+        "high": 79533,
+        "note": "Low baru dan low rebound 4H"
       },
       {
         "kind": "resistance",
-        "low": 81196,
-        "high": 81532,
-        "note": "High pantulan 1H dan EMA21 1H dibulatkan."
+        "low": 81063,
+        "high": 81378,
+        "note": "EMA50 1H dan EMA21 4H"
       },
       {
         "kind": "resistance",
-        "low": 82019,
-        "high": 82260,
-        "note": "Gugus EMA 4H dan EMA200 1H; reclaim saja belum cukup tanpa retest."
-      },
-      {
-        "kind": "resistance",
-        "low": 84335,
-        "high": 84850,
-        "note": "Zona high harian 21–22 Oktober."
+        "low": 81876,
+        "high": 81967,
+        "note": "EMA50/200 4H"
       }
     ],
     "events": [
       {
         "at": "2026-10-28T18:00:00Z",
-        "title": "Keputusan FOMC · 29 Oktober 02.00 WITA",
+        "title": "Keputusan FOMC",
         "impact": "high",
-        "source": "https://www.federalreserve.gov/newsevents/2026-october.htm?view=calendar"
+        "source": "https://www.federalreserve.gov/newsevents/2026-october.htm"
       },
       {
         "at": "2026-10-28T18:30:00Z",
-        "title": "Konferensi pers FOMC · 29 Oktober 02.30 WITA",
+        "title": "Konferensi pers FOMC",
         "impact": "high",
-        "source": "https://www.federalreserve.gov/newsevents/2026-october.htm?view=calendar"
+        "source": "https://www.federalreserve.gov/newsevents/2026-october.htm"
       }
     ],
     "invalidations": [
-      "Close 4H di atas 82.260 dan retest bertahan membatalkan bias bearish intraday.",
-      "Close 1H di bawah 80.500 saja belum mengaktifkan SHORT; wajib retest dan konfirmasi 15m.",
-      "Kehilangan 79.732 memerlukan evaluasi ulang, bukan memakai rencana lama."
+      "Reclaim 81,378 gagal bertahan membatalkan tesis pemulihan.",
+      "Breakdown 80,259 segera direbut kembali membatalkan tesis kelanjutan turun.",
+      "Snapshot kedaluwarsa setelah validUntil."
     ],
     "sources": [
       {
@@ -63,24 +57,12 @@
         "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint"
       },
       {
-        "title": "Hyperliquid funding",
-        "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/trading/funding"
-      },
-      {
-        "title": "Farside BTC",
+        "title": "ETF BTC",
         "url": "https://farside.co.uk/btc/"
       },
       {
-        "title": "Farside ETH",
-        "url": "https://farside.co.uk/eth/"
-      },
-      {
-        "title": "Federal Reserve kalender Oktober",
-        "url": "https://www.federalreserve.gov/newsevents/2026-october.htm?view=calendar"
-      },
-      {
-        "title": "Reuters minyak 23 Oktober",
-        "url": "https://www.reuters.com/business/energy/oil-little-changed-supply-concern-lingers-amid-houthi-attacks-saudi-arabia-2026-10-23/"
+        "title": "Fed",
+        "url": "https://www.federalreserve.gov/newsevents/2026-october.htm"
       }
     ],
     "plan": null
