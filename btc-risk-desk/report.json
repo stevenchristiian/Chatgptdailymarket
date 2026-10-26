@@ -40,6 +40,12 @@
     ],
     "events": [
       {
+        "at": "2026-10-26T12:30:00Z",
+        "title": "Chicago Fed National Activity Index September (26 Okt 20.30 WITA)",
+        "impact": "medium",
+        "source": "https://www.chicagofed.org/research/data/data-release-calendar"
+      },
+      {
         "at": "2026-10-26T20:15:00Z",
         "title": "Fed H.10 dan H.15 (27 Okt 04.15 WITA)",
         "impact": "low",
