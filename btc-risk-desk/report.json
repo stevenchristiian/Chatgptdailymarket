@@ -1,11 +1,11 @@
 {
   "schema": 1,
   "report": {
-    "asOf": "2026-10-27T00:47:11.817Z",
-    "validUntil": "2026-10-27T12:47:11.817Z",
+    "asOf": "2026-10-27T00:58:01.000Z",
+    "validUntil": "2026-10-27T12:58:01.000Z",
     "signal": "NO TRADE",
     "headline": "Rebound 15m belum mengubah bias Daily dan 4H.",
-    "reason": "Mark 80256; 15m menguat tetapi Daily dan 4H tetap di bawah EMA21/50. Close 1H 80110 belum menembus resistance. Belum ada breakout serta retest entry yang terkonfirmasi; FOMC 29 Oktober 02.00 WITA menjadi risiko berikutnya.",
+    "reason": "Data Hyperliquid 08.47.11 WITA; kalender diverifikasi ulang 08.58 WITA. Mark 80256; 15m menguat tetapi Daily dan 4H tetap di bawah EMA21/50. Close 1H 80110 belum menembus resistance. Belum ada breakout serta retest entry yang terkonfirmasi; FOMC 29 Oktober 02.00 WITA menjadi risiko berikutnya.",
     "levels": [
       {
         "kind": "support",
@@ -40,6 +40,24 @@
     ],
     "events": [
       {
+        "at": "2026-10-27T12:30:00Z",
+        "title": "Durable goods September — 27 Oktober 20.30 WITA",
+        "impact": "high",
+        "source": "https://www.census.gov/manufacturing/m3/prel/pdf/s-i-o.pdf"
+      },
+      {
+        "at": "2026-10-27T14:00:00Z",
+        "title": "Consumer Confidence — 27 Oktober 22.00 WITA",
+        "impact": "high",
+        "source": "https://www.conference-board.org/topics/consumer-confidence/"
+      },
+      {
+        "at": "2026-10-27T14:00:00Z",
+        "title": "New home sales — 27 Oktober 22.00 WITA",
+        "impact": "medium",
+        "source": "https://www.census.gov/construction/nrs/pdf/newressales.pdf"
+      },
+      {
         "at": "2026-10-27T17:00:00Z",
         "title": "Fed H.6 Money Stock Measures — 28 Oktober 01.00 WITA",
         "impact": "low",
@@ -62,6 +80,12 @@
         "title": "GDP Q3 advance dan Personal Income/Outlays termasuk PCE — 29 Oktober 20.30 WITA",
         "impact": "high",
         "source": "https://www.bea.gov/news/schedule"
+      },
+      {
+        "at": "2026-10-30T12:30:00Z",
+        "title": "Employment Cost Index Q3 — 30 Oktober 20.30 WITA",
+        "impact": "high",
+        "source": "https://www.bls.gov/schedule/2026/10_sched.htm"
       }
     ],
     "invalidations": [
