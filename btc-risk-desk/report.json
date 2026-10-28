@@ -1,67 +1,55 @@
 {
   "schema": 1,
   "report": {
-    "asOf": "2026-10-27T00:58:01.000Z",
-    "validUntil": "2026-10-27T12:58:01.000Z",
+    "asOf": "2026-10-28T01:00:36.492Z",
+    "validUntil": "2026-10-28T13:00:36.492Z",
     "signal": "NO TRADE",
-    "headline": "Rebound 15m belum mengubah bias Daily dan 4H.",
-    "reason": "Data Hyperliquid 08.47.11 WITA; kalender diverifikasi ulang 08.58 WITA. Mark 80256; 15m menguat tetapi Daily dan 4H tetap di bawah EMA21/50. Close 1H 80110 belum menembus resistance. Belum ada breakout serta retest entry yang terkonfirmasi; FOMC 29 Oktober 02.00 WITA menjadi risiko berikutnya.",
+    "headline": "Pemulihan 1H bertahan, momentum 15m melemah; struktur Daily/4H belum sepenuhnya pulih.",
+    "reason": "Snapshot Hyperliquid 28 Oktober 09.00.36 WITA. Daily merebut EMA50 tetapi masih di bawah EMA21; 4H di atas EMA21 namun di bawah EMA50/200. Close 1H 80721 masih di bawah EMA200 81065, dan 15m kembali di bawah EMA21. Reclaim area 80607 kemarin terjaga, tetapi belum ada setup entry baru yang lengkap. FOMC 29 Oktober 02.00 WITA berada dalam 24 jam berikutnya, di luar masa berlaku snapshot 12 jam ini.",
     "levels": [
       {
         "kind": "support",
-        "low": 79700,
-        "high": 79789,
-        "note": "Low 1H terbaru dan area low intraday; bukan entry otomatis"
+        "low": 80608,
+        "high": 80674,
+        "note": "Low retest 1H dan low jam terakhir"
       },
       {
         "kind": "support",
-        "low": 79184,
-        "high": 79347,
-        "note": "Low Daily 24 dan 26 Oktober"
+        "low": 80431,
+        "high": 80498,
+        "note": "Low 4H sebelumnya dan EMA21 4H"
+      },
+      {
+        "kind": "support",
+        "low": 79347,
+        "high": 79489,
+        "note": "Low Daily 26–27 Oktober"
       },
       {
         "kind": "resistance",
-        "low": 80325,
-        "high": 80355,
-        "note": "EMA200 15m dan high candle 15m terbaru"
+        "low": 81012,
+        "high": 81065,
+        "note": "High 1H terbaru dan EMA200 1H"
       },
       {
         "kind": "resistance",
-        "low": 80533,
-        "high": 80607,
-        "note": "High 4H sebelumnya dan EMA21 4H"
+        "low": 81281,
+        "high": 81281,
+        "note": "High Daily 27 Oktober"
       },
       {
         "kind": "resistance",
-        "low": 80835,
-        "high": 81014,
-        "note": "High Daily 26 dan 25 Oktober"
+        "low": 81692,
+        "high": 81835,
+        "note": "EMA200 4H dan EMA21 Daily"
       }
     ],
     "events": [
       {
-        "at": "2026-10-27T12:30:00Z",
-        "title": "Durable goods September — 27 Oktober 20.30 WITA",
+        "at": "2026-10-28T14:30:00Z",
+        "title": "EIA minyak mingguan — 28 Oktober 22.30 WITA",
         "impact": "high",
-        "source": "https://www.census.gov/manufacturing/m3/prel/pdf/s-i-o.pdf"
-      },
-      {
-        "at": "2026-10-27T14:00:00Z",
-        "title": "Consumer Confidence — 27 Oktober 22.00 WITA",
-        "impact": "high",
-        "source": "https://www.conference-board.org/topics/consumer-confidence/"
-      },
-      {
-        "at": "2026-10-27T14:00:00Z",
-        "title": "New home sales — 27 Oktober 22.00 WITA",
-        "impact": "medium",
-        "source": "https://www.census.gov/construction/nrs/pdf/newressales.pdf"
-      },
-      {
-        "at": "2026-10-27T17:00:00Z",
-        "title": "Fed H.6 Money Stock Measures — 28 Oktober 01.00 WITA",
-        "impact": "low",
-        "source": "https://www.federalreserve.gov/newsevents/2026-october.htm"
+        "source": "https://www.eia.gov/petroleum/supply/weekly/schedule.php"
       },
       {
         "at": "2026-10-28T18:00:00Z",
@@ -77,21 +65,27 @@
       },
       {
         "at": "2026-10-29T12:30:00Z",
-        "title": "GDP Q3 advance dan Personal Income/Outlays termasuk PCE — 29 Oktober 20.30 WITA",
+        "title": "GDP Q3 advance dan PCE September — 29 Oktober 20.30 WITA",
         "impact": "high",
         "source": "https://www.bea.gov/news/schedule"
       },
       {
         "at": "2026-10-30T12:30:00Z",
-        "title": "Employment Cost Index Q3 — 30 Oktober 20.30 WITA",
+        "title": "Employment Cost Index — 30 Oktober 20.30 WITA",
         "impact": "high",
         "source": "https://www.bls.gov/schedule/2026/10_sched.htm"
+      },
+      {
+        "at": "2026-11-02T19:00:00Z",
+        "title": "SLOOS — 3 November 03.00 WITA, AS sudah EST",
+        "impact": "medium",
+        "source": "https://www.federalreserve.gov/newsevents/2026-november.htm"
       }
     ],
     "invalidations": [
-      "Pemulihan perlu close 1H di atas 80607 dan retest bertahan, kemudian evaluasi 80835–81014; kembali di bawah area reclaim membatalkannya.",
-      "Bearish perlu close 1H di bawah 79347 serta retest gagal; reclaim 79347 membatalkan.",
-      "Data kedaluwarsa atau gangguan feed membatalkan penggunaan level untuk entry."
+      "Pemulihan membutuhkan close 1H >81065 dan retest bertahan; kembali di bawah 80608 melemahkan tesis.",
+      "Kelanjutan turun perlu close 1H <80431 dan retest gagal; reclaim 80498 melemahkannya.",
+      "Snapshot kedaluwarsa, data terlambat atau gangguan feed membatalkan penggunaan untuk entry."
     ],
     "sources": [
       {
@@ -99,24 +93,40 @@
         "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint"
       },
       {
-        "title": "Farside BTC",
+        "title": "ETF BTC",
         "url": "https://farside.co.uk/btc/"
       },
       {
-        "title": "Farside ETH",
+        "title": "ETF ETH",
         "url": "https://farside.co.uk/eth/"
       },
       {
-        "title": "Fed kalender",
+        "title": "Sentimen",
+        "url": "https://alternative.me/crypto/fear-and-greed-index/"
+      },
+      {
+        "title": "Fed Oktober",
         "url": "https://www.federalreserve.gov/newsevents/2026-october.htm"
       },
       {
-        "title": "BEA kalender",
+        "title": "Fed November",
+        "url": "https://www.federalreserve.gov/newsevents/2026-november.htm"
+      },
+      {
+        "title": "BEA",
         "url": "https://www.bea.gov/news/schedule"
       },
       {
-        "title": "Reuters energi 26 Oktober",
-        "url": "https://www.investing.com/news/commodities-news/oil-prices-down-almost-1-in-early-trading-4971306"
+        "title": "BLS",
+        "url": "https://www.bls.gov/schedule/2026/10_sched.htm"
+      },
+      {
+        "title": "EIA",
+        "url": "https://www.eia.gov/petroleum/supply/weekly/schedule.php"
+      },
+      {
+        "title": "Reuters 27 Oktober",
+        "url": "https://www.reuters.com/business/energy/oil-eases-middle-east-diplomacy-hopes-saudi-attacks-keep-supply-worries-alive-2026-10-27/"
       }
     ],
     "plan": null
